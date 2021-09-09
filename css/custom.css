@@ -1,2 +1,117 @@
 
-/** ADD YOUR AWESOME CODES HERE **/
+/** Custom css **/
+
+/** Footer Section **/
+.info_section {
+    background-color: #121212;
+    color: #ffffff;
+    padding: 75px 0;
+  }
+  .info_section h5 {
+    margin: 20px 0 25px 0;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: large;
+  }
+  .info_section .form_heading {
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+  .info_section .info_logo a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    margin-bottom: 25px;
+  }
+  .info_section .info_logo a img {
+    width: 40px;
+    -webkit-filter: invert(1);
+            filter: invert(1);
+  }
+  .info_section .info_logo a span {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-left: 10px;
+    text-transform: uppercase;
+  }
+  
+  .info_section .info_form form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  
+.info_section .info_form form input {
+    min-width: 100%;
+    height: 45px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    padding: 0 15px;
+  }
+  .info_section .info_form form button {
+    padding: 0 45px;
+    height: 40px;
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    color: #ffffff;
+    text-transform: uppercase;
+    background-color: #5aa469;
+    -webkit-transform: translate(-102%);
+            transform: translate(-102%);
+    margin-top: 2.5px;
+  }  
+  .info_section .contact_link_box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .info_section .contact_link_box a {
+    margin: 5px 0;
+    color: #ffffff;
+  }
+  .info_section .contact_link_box a i {
+    margin-right: 5px;
+  }
+  .info_section .contact_link_box a:hover {
+    color: #5aa469;
+  }
+  .info_social {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+.info_social a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: #ffffff;
+    border-radius: 100%;
+    margin-right: 10px;
+    font-size: 24px;
+  }
+  .info_social a:hover {
+    color: #5aa469;
+  }
+  
+
+
