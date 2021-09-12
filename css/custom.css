@@ -1,6 +1,53 @@
 
 /** Custom css **/
 
+/** About Section **/
+.about_section .img-box {
+  margin-bottom: 45px;
+}
+.about_section .row {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.about_section .img-box {
+  overflow: hidden;
+}
+.about_section .img-box img {
+  width: 100%;
+  border-radius: 25px;
+  margin-top: 120px;
+}
+.about_section .heading_container h2 hr {
+  background-color: #ffffff;
+}
+
+.about_section .detail-box h2 {
+  margin-bottom: 10px;
+  font-size: 40px;
+  font-weight: 500px;
+}
+
+.about_section .detail-box p {
+  margin-bottom: 25px;
+  font: bold;
+}
+
+.about_section .detail-box a {
+  display: inline-block;
+  padding: 8px 30px;
+  background-color: #5aa469;
+  color: #ffffff;
+  border-radius: 0;
+  text-transform: uppercase;
+}
+
+.about_section .detail-box a:hover {
+  background-color: #51945e;
+}
+
+
+
 /** Footer Section **/
 .info_section {
     background-color: #121212;
