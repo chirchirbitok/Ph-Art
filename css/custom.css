@@ -1,6 +1,91 @@
 
 /** Custom css **/
 
+/** Contact Intro css **/
+.all-page-title-1{
+	background-size: cover;
+  background-color: #d2dad93f;
+	background-repeat: no-repeat;
+	padding: 90px 0px 90px 0px;
+	background-position: center bottom;
+}
+
+.all-page-title-1 h1{
+	position: relative;
+	font-size: 36px;
+	font-weight: 700;
+	color: #0e0d0d;
+	text-align: center;
+	line-height: 1.3em;
+	margin-bottom: 10px;
+	text-transform: capitalize;
+}
+
+.all-page-title-1 h4{
+  color: #0e0d0d;
+  text-align: center;
+  margin-bottom: 30px;
+  text-transform: capitalize;
+  font-weight: 300;
+}
+
+.all-page-title-1 p{
+	color: #1d1919;
+	font-size: 18px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.all-page-title{
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 160px 0px 110px 0px;
+	background-position: center bottom;
+}
+
+.all-page-title h1{
+	position: relative;
+	font-size: 36px;
+	font-weight: 700;
+	color: #ffffff;
+	text-align: left bottom;
+	line-height: 1.3em;
+	margin-bottom: 100px;
+	text-transform: capitalize;
+}
+
+.all-page-title p{
+	color: #ffffff;
+	font-size: 18px;
+}
+
+.page-info{
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.inner-container ul li{
+	display: inline-block;
+	color: #ffffff;
+}
+
+.inner-container ul li span{
+	background: #333333;
+	display: inline-block;
+	color: #ffffff;
+	padding: 5px 10px;	
+}
+
+.inner-container ul li a{
+	background: #333333;
+	display: inline-block;
+	color: #ffffff;
+	padding: 5px 10px;	
+}
+
+.inner-container ul li a:hover{
+	color: #ffffff;
+}
 
 
 /** About Section **/
