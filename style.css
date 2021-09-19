@@ -950,8 +950,8 @@ xclip
     overflow: hidden;
 }
 .pricingTable .pricingTable-header{
-    padding: 50px 10px 120px;
-    background: #8299cd;
+    padding: 50px 10px 50px;
+    background: #C0C0C0;
     z-index: 1;
     overflow: hidden;
     position: relative;
@@ -985,15 +985,15 @@ xclip
 }
 .pricingTable .pricing-content{
     background: #fff;
-    padding: 100px 20px 10px;
+    padding: 40px 20px 10px;
     position: relative;
 }
 .pricingTable .pricing-content:after{
     content: "";
     display: block;
     width: 3px;
-    height: 100px;
-    background: #8299cd;
+    height: 40px;
+    background: #C0C0C0;
     position: absolute;
     top: 0;
     left: 50%;
@@ -1003,9 +1003,9 @@ xclip
     width: 130px;
     height: 150px;
     background: #fff;
-    color: #8299cd;
+    color: #C0C0C0;
     padding: 20px 0;
-    border: 1px solid #8299cd;
+    border: 1px solid #C0C0C0;
     box-shadow: 0 0 0 5px #fff,0 0 25px -2px  #000;
     z-index: 1;
     position: absolute;
@@ -1023,7 +1023,7 @@ xclip
     display: block;
     width: 60%;
     height: 2px;
-    background: #8299cd;
+    background: #C0C0C0;
     margin: 0 auto;
 }
 .pricingTable .month{
@@ -1037,7 +1037,7 @@ xclip
     margin: 0;
     list-style: none;
     text-align: left;
-    border: 1px solid #8299cd;
+    border: 1px solid #C0C0C0;
 }
 .pricingTable .pricing-content ul li{
     font-size: 18px;
@@ -1051,8 +1051,8 @@ xclip
     width: 13px;
     height: 13px;
     border-radius: 50%;
-    border: 2px solid #8299cd;
-    background: #8299cd;
+    border: 2px solid #C0C0C0;
+    background: #C0C0C0;
     box-shadow: 0 0 0 2px #fff inset;
     position: absolute;
     left: -25px;
@@ -1062,8 +1062,8 @@ xclip
     display: inline-block;
     padding: 12px 18px 12px;
     margin: 4px auto 0;
-    background: #8299cd;
-    border: 2px solid #8299cd;
+    background: #C0C0C0;
+    border: 2px solid #C0C0C0;
     font-size: 18px;
     font-weight: 500;
     color: #fff;
@@ -1081,33 +1081,33 @@ xclip
 .pricingTable.yellow .amount:after,
 .pricingTable.yellow .pricing-content:after,
 .pricingTable.yellow .pricing-content ul li:before,
-.pricingTable.yellow .pricingTable-signup{ background: #e45050; }
+.pricingTable.yellow .pricingTable-signup{ background: #d4af37; }
 .pricingTable.yellow .price-value{
-    color: #e45050;
-    border-color: #e45050;
+    color: #d4af37;
+    border-color: #d4af37;
 }
 .pricingTable.yellow .pricing-content ul,
 .pricingTable.yellow .pricing-content ul li:before,
-.pricingTable.yellow .pricingTable-signup{ border-color: #e45050; }
+.pricingTable.yellow .pricingTable-signup{ border-color: #d4af37; }
 .pricingTable.yellow .pricingTable-signup:hover{
     background: #fff;
-    color: #e45050;
+    color: #d4af37;
 }
 .pricingTable.purple .pricingTable-header,
 .pricingTable.purple .amount:after,
 .pricingTable.purple .pricing-content:after,
 .pricingTable.purple .pricing-content ul li:before,
-.pricingTable.purple .pricingTable-signup{ background: #db5c87; }
+.pricingTable.purple .pricingTable-signup{ background: #98e0f0; }
 .pricingTable.purple .price-value{
-    color: #db5c87;
-    border-color: #db5c87;
+    color: #98e0f0;
+    border-color: #98e0f0;
 }
 .pricingTable.purple .pricing-content ul,
 .pricingTable.purple .pricing-content ul li:before,
-.pricingTable.purple .pricingTable-signup{ border-color: #db5c87; }
+.pricingTable.purple .pricingTable-signup{ border-color: #98e0f0; }
 .pricingTable.purple .pricingTable-signup:hover{
     background: #fff;
-    color: #db5c87;
+    color: #98e0f0;
 }
 @media only screen and (max-width: 990px){
     .pricingTable{ margin-bottom: 30px; }
