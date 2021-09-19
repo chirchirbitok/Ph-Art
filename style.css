@@ -985,7 +985,7 @@ xclip
 }
 .pricingTable .pricing-content{
     background: #fff;
-    padding: 40px 20px 10px;
+    padding: 40px 0px 10px;
     position: relative;
 }
 .pricingTable .pricing-content:after{
