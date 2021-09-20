@@ -1,6 +1,8 @@
 
 /** Custom css **/
 
+
+
 /** Contact Intro css **/
 .all-page-title-1{
 	background-size: cover;
@@ -62,6 +64,10 @@
 .page-info{
 	text-align: center;
 	margin-bottom: 20px;
+}
+
+.container-text-1{
+  text-align: center;
 }
 
 .inner-container ul li{
