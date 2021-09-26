@@ -63,7 +63,7 @@
 
 .page-info{
 	text-align: center;
-	margin-bottom: 20px;
+	margin-top: 50px;
   
 }
 
@@ -100,7 +100,7 @@
 }
 
 .inner-container ul li span{
-	background: #333333;
+  background: #333333;
 	display: inline-block;
 	color: #ffffff;
 	padding: 5px 10px;	
