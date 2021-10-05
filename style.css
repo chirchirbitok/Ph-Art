@@ -316,10 +316,18 @@ a img.aligncenter {
 }
 .section.lb{
     margin-top: 50px;
+    margin-bottom: -10px;
     
+}
+.section.lz{
+    margin-top: -50px;
     
 }
 
+.section.lz .gallery-video{
+    margin-top: 50px;
+    
+}
 .hamburger{
 	right: 30px;
 	top: 22px;
@@ -2657,3 +2665,20 @@ select.mobile-device {
     color: rgba(255, 255, 255, 0.6);
 }
 
+/** Video styling inside galary **/
+.glyphicon{
+    width: 70px;
+    position: relative;
+    top: -50%;
+    cursor: pointer;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.container h1{
+    margin-top: 4%;
+}
+
+.col-md-4:hover .glyphicon{
+    opacity: 1;
+}
