@@ -299,7 +299,7 @@
 		<div class="modal-dialog modal-dialog-centered" id="myModal" role="document">
 		<div class="modal-content">
 			
-			<div class="modal-body" id="videoPlayer">
+			<div class="modal-body" id="videoPlayer" >
 				<video width="100%" controls autoplay id="myVideo1">
 					<source src="videos/life_is_short_live_every_day_for_god_billy_graham_inspirational_amp_motivational_video_h264_41800.mp4" type="video/mp4">
 				</video>
@@ -314,7 +314,7 @@
 		<div class="modal-content">
 			
 			<div class="modal-body" id="videoPlayer2">
-				<video width="100%" controls autoplay loop id="myVideo2">
+				<video width="100%" controls autoplay loop id="myVideo2" onclick="play()">
 					<source src="videos/tragedy_into_triumph_inky_johnson_inspirational_motivational_video_h264_41285.mp4" type="video/mp4">
 				</video>
 				<img src="images/closeicon.png" class="close-btn" onclick="stopVideo()" data-dismiss="modal">
@@ -339,6 +339,13 @@
 	</div>
 	</div>
 		
+	<div class="gallery-menu text-center row">
+		<div class="col-md-12">
+			<div class="button-group filter-button-group">
+				<button class="active" data-filter="*">Youtube Videos Highlights</button>
+			</div>
+		</div>
+	</div>
 			<div class="gallery-video row">
 				<script src="https://apps.elfsight.com/p/platform.js" defer></script>
 				<div class="elfsight-app-e2b7d133-35c5-4f9c-80d9-77e23488e310"></div>
@@ -486,7 +493,8 @@
 		var videoPlayer = document.getElementById("videoPlayer");
 		var videoPlayer2 = document.getElementById("videoPlayer2");
 		var videoPlayer3 = document.getElementById("videoPlayer3");
-		var myVideo1 = document.getElementById("myVideo1");
+
+
 		const video = document.getElementById("myVideo1");
 		const video2 = document.getElementById("myVideo2");
 		const video3 = document.getElementById("myVideo3");
@@ -513,6 +521,8 @@
 			videoPlayer.style.display = "block";
 			videoPlayer2.style.display = "block";
 			videoPlayer3.style.display = "block";
+			
+
 		}
 
 		function pauseVideo(){
