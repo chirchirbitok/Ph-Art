@@ -265,7 +265,7 @@
 		</div>
 	</div>	
 
-	<!-- Youtube Galary -->
+	<!-- Youtube Galary plus local video -->
 	<div id="gallery" class="section lz" >
 
 		<div class="container">
@@ -283,26 +283,27 @@
 		<div class="row">
 			<div class="col-md-4">
 				<img src="images/ScreenshotI.png" class="img-fluid">
-				<img src="images/play.icon.png" class="glyphicon" data-toggle="modal" data-target="#play-video-1">
+				<img src="images/play.icon.png" class="glyphicon" data-toggle="modal" data-target="#play-video-1" onclick="playVideo('videos/life_is_short_live_every_day_for_god_billy_graham_inspirational_amp_motivational_video_h264_41800.mp4')">
 			</div>
 			<div class="col-md-4">
 				<img src="images/ScreenshotII.png" class="img-fluid">
 				<img src="images/play.icon.png" class="glyphicon" data-toggle="modal" data-target="#play-video-2">
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-4" >
 				<img src="images/ScreenshotIII.png" class="img-fluid">
 				<img src="images/play.icon.png" class="glyphicon" data-toggle="modal" data-target="#play-video-3">
 			</div>
 		</div>	
 			<!-- Modal -->
-	<div class="modal fade" id="play-video-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document">
+	<div class="modal fade" id="play-video-1" onclick="stopVideo()">
+		<div class="modal-dialog modal-dialog-centered" id="myModal" role="document">
 		<div class="modal-content">
 			
-			<div class="modal-body">
-				<video width="100%" controls autoplay loop>
+			<div class="modal-body" id="videoPlayer">
+				<video width="100%" controls autoplay id="myVideo1">
 					<source src="videos/life_is_short_live_every_day_for_god_billy_graham_inspirational_amp_motivational_video_h264_41800.mp4" type="video/mp4">
 				</video>
+				<img src="images/closeicon.png" class="close-btn" onclick="stopVideo()">
 			</div>
 			</div>
 		</div>
@@ -313,7 +314,7 @@
 		<div class="modal-content">
 			
 			<div class="modal-body">
-				<video width="100%" controls autoplay loop>
+				<video width="100%" controls autoplay loop id="myVideo2">
 					<source src="videos/tragedy_into_triumph_inky_johnson_inspirational_motivational_video_h264_41285.mp4" type="video/mp4">
 				</video>
 			</div>
@@ -326,7 +327,7 @@
 		<div class="modal-content">
 			
 			<div class="modal-body">
-				<video width="100%" controls autoplay loop>
+				<video width="100%" controls autoplay loop id="myVideo3" >
 					<source src="videos/VID-20200626-WA0000.mp4" type="video/mp4">
 				</video>
 			</div>
@@ -344,9 +345,6 @@
 		</div>
 	</div>
 	
-
-	
-
 
 
 	    <!-- info section -->
@@ -441,7 +439,6 @@
 		  <!-- end info_section -->
 	
 
-    
 
     <div class="copyrights">
         <div class="container">
@@ -481,6 +478,27 @@
 	<script src="js/jquery.fatNav.min.js"></script>
 	<script src="js/main.js"></script>
     <script src="js/custom.js"></script>
+
+	<script>
+		var videoPlayer = document.getElementById("videoPlayer");
+		var myVideo1 = document.getElementById("myVideo1");
+		const video = document.getElementById("myVideo1");
+
+		function stopVideo(){
+			videoPlayer.style.display = "hide";
+			
+
+			
+			video.pause();
+			video.currentTime = 0;
+			
+		}
+
+		function playVideo(){
+			videoPlayer.style.display = "block";
+		}
+
+	</script>
 
 </body>
 </html>
