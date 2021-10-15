@@ -1601,7 +1601,7 @@ hr.invis1 {
 .filter-button-group{
 	border: 0px solid #000;
 	border-radius: 0px;
-	margin: 10px 0px;
+	margin: 10px 0px 30px;
 	display: inline-block;
 }
 
@@ -2548,6 +2548,14 @@ select.mobile-device {
   top: calc(50% - 100px);
   left: calc(50% - 60px);
 }
+
+#main-l {
+    width: 130px;
+    height: 160px;
+    top: calc(50% - -160px);
+    position: absolute;
+    left: calc(50% - 60px);  
+  }
 
 .loader{
     width: 160px;

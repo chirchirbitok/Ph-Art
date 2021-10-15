@@ -40,9 +40,11 @@
 	}
 	.filter-button-group button{
 		padding: 12px 27px;
+		
 	}
 	.filter-button-group{
 		text-align: center !important;
+		margin-bottom: 1120px;
 	}
 	.post-box{
 		margin-bottom: 30px;
