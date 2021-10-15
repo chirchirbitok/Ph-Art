@@ -277,5 +277,13 @@
     color: #5aa469;
   }
   
+  /* more or less about us */
+  #more {
+    display: none;
+  }
 
+  #myBtn{
+    border-color: transparent;
+    background-color: #3c6877;
+  }
 
