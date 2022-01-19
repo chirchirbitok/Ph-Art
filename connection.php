@@ -2,7 +2,7 @@
 include "constant.php";
 
 //creating connenction 
-$con = new mysqli(HOSTNAME, HOSTUSER, HOSTPASSWORD, DBNAME);
+$conn = new mysqli(HOSTNAME, HOSTUSER, HOSTPASSWORD, DBNAME);
 
 //check connection 
 if($conn->conn_error){

@@ -1,3 +1,94 @@
+<?php
+    
+   include_once "connection.php";
+
+
+$sql = "SELECT id, title, description, services FROM home";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+  // output data of each row
+  while($row = mysqli_fetch_assoc($result)) {
+    //echo "id: " . $row["id"]. " - Title: " . $row["title"]. "Decription: " . $row["description"]."services: " . $row["services"].  "<br>";
+    $id = $row["id"];
+    $title = $row["title"];
+    $description = $row["description"];
+    $services = $row["services"];
+  }
+} else {
+  echo "0 results";
+}
+
+$sql1 = "SELECT profile_id, full_name, bio, profile_image, wedding_skill, fashion_skill, model_skill, photography_skills FROM profile";
+$result1 = mysqli_query($conn, $sql1);
+
+if (mysqli_num_rows($result1) > 0) {
+  // output data of each row
+  while($row = mysqli_fetch_assoc($result1)) {
+    //echo "profile_id: " . $row["profile_id"]. " - full_name: " . $row["full_name"].  "<br>";
+    $profile_id = $row["profile_id"];
+    $full_name = $row["full_name"];
+    $bio = $row["bio"];
+    $profile_image = $row["profile_image"];
+    $wedding_skill = $row["wedding_skill"];
+    $fashion_skill = $row["fashion_skill"];
+    $model_skill = $row["model_skill"];
+    $photography_skills = $row["photography_skills"];
+  }
+} else {
+  echo "0 results";
+}
+
+$sql2 = "SELECT service_id, service_title, services FROM service WHERE service_id=301 ";
+$result2 = mysqli_query($conn, $sql2);
+
+if (mysqli_num_rows($result2) > 0) {
+  // output data of each row
+  while($row = mysqli_fetch_assoc($result2)) {
+    echo "service_id: " . $row["service_id"]. "<br>";
+    $service_id = $row["service_id"];
+    $service_title = $row["service_title"];
+    $services = $row["services"];
+  }
+} else {
+  echo "0 results";
+}
+
+$sql3 = "SELECT service_id, service_title, services FROM service WHERE service_id=302 ";
+$result3 = mysqli_query($conn, $sql3);
+
+if (mysqli_num_rows($result3) > 0) {
+  // output data of each row
+  while($row = mysqli_fetch_assoc($result3)) {
+    echo "service_id: " . $row["service_id"]. "<br>";
+    $service_id1 = $row["service_id"];
+    $service_title1 = $row["service_title"];
+    $services1 = $row["services"];
+  }
+} else {
+  echo "0 results";
+}
+
+$sql4 = "SELECT service_id, service_title, services FROM service WHERE service_id=303 ";
+$result4 = mysqli_query($conn, $sql4);
+
+if (mysqli_num_rows($result4) > 0) {
+  // output data of each row
+  while($row = mysqli_fetch_assoc($result4)) {
+    echo "service_id: " . $row["service_id"]. "<br>";
+    $service_id2 = $row["service_id"];
+    $service_title2 = $row["service_title"];
+    $services2 = $row["services"];
+  }
+} else {
+  echo "0 results";
+}
+
+
+
+
+mysqli_close($conn);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -87,10 +178,15 @@
       </div>
     </nav>
 	
+    <?php
+    
+    
+    ?>
+
 	<section id="home" class="main-banner parallaxie" style="background: url('uploads/banner-01.jpg')">
 		<div class="heading">
-			<h1>Welcome to CleanPhotography</h1>
-			<p>"The pain itself is love, the main customer, <br>but I give it time to as low as fatigue and great pain."</p>
+			<h1><?php print_r($title) ?></h1>
+			<p> <?php print_r($description) ?> </p>
 			<h3 class="cd-headline clip is-full-width">
 				<span>A lot of pain is a lot </span>
 				<span class="cd-words-wrapper">
@@ -109,37 +205,34 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="message-box">                        
-                        <h2> Jessica Chan </h2>
-                        <p> Jessica Sample grew up in Los Angeles and has been traveling far from home and taking pictures ever since childhood.   Her parents owned a stock footage company and she accompanied them across the world with her camera to places as far flung as Bhutan, Tibet, Africa, Europe, and Indonesia. 
-
-                            She was previously the Deputy Photo Editor at Travel + Leisure Magazine in New York and a frequent contributor to the magazine.  She has a Bachelor’s degree from Brown University and has studied at the International Center of Photography.</p>
-						<p>Jessica is currently based in Los Angeles.  She is also available for travel assignments departing New York City.  She is the curator of Wanderlust: A Silent Auction Benefit that auctions travel photography prints to raise money for environmental charities.</p>
-
+                        <h2><?php print_r($full_name) ?></h2>
+                        <p> <?php print_r($bio) ?> </p>
+						
 						
 						<div class="skill-bar-box">
 							<h2> Photograpgy Skills </h2>
-							<div class="skillbar" data-percent="60">
+							<div class="skillbar" data-percent="<?php print_r($wedding_skill) ?>">
 								<span class="skillbar-title" style="background: #db5c87;">Wedding</span>
 								<p class="skillbar-bar" style="background: #e45050;"></p>
 								<span class="skill-bar-percent"></span>
 							</div>
 							<!-- End Skill Bar -->
 							
-							<div class="skillbar" data-percent="80">
+							<div class="skillbar" data-percent="<?php print_r($fashion_skill) ?>">
 								<span class="skillbar-title" style="background: #db5c87;">Fashion</span>
 								<p class="skillbar-bar" style="background: #e45050;"></p>
 								<span class="skill-bar-percent"></span>
 							</div>
 							<!-- End Skill Bar -->
 							
-							<div class="skillbar" data-percent="70">
+							<div class="skillbar" data-percent="<?php print_r($model_skill) ?>">
 								<span class="skillbar-title" style="background: #db5c87;">Models</span>
 								<p class="skillbar-bar" style="background: #e45050;"></p>
 								<span class="skill-bar-percent"></span>
 							</div>
 							<!-- End Skill Bar -->
 							
-							<div class="skillbar" data-percent="90">
+							<div class="skillbar" data-percent="<?php print_r($photography_skills) ?>">
 								<span class="skillbar-title" style="background: #db5c87;">Photograpgy</span>
 								<p class="skillbar-bar" style="background: #e45050;"></p>
 								<span class="skill-bar-percent"></span>
@@ -245,8 +338,8 @@
 						<div class="ser-icon">
 							<i class="flaticon-wedding-photo"></i>
 						</div>
-						<h2>Wedding Photography</h2>
-						<p>A lot of pain is a lot, enhanced monitoring procedures, but I give it time to as low as fatigue and great pain.</p>
+						<h2> <?php print_r($service_title) ?></h2>
+						<p> <?php print_r($services) ?> </p>
 					</div>
                 </div><!-- end col -->
                 <div class="col-md-4">
@@ -254,8 +347,8 @@
 						<div class="ser-icon">
 							<i class="flaticon-image"></i>
 						</div>
-						<h2>Portrait photography</h2>
-						<p>A lot of pain is a lot, enhanced monitoring procedures, but I give it time to as low as fatigue and great pain.</p>
+						<h2> <?php print_r($service_title1) ?> </h2>
+						<p> <?php print_r($services1) ?> </p>
 					</div>
                 </div><!-- end col -->
 				<div class="col-md-4">
@@ -263,8 +356,8 @@
 						<div class="ser-icon">
 							<i class="flaticon-event"></i>
 						</div>
-						<h2>Event Photography</h2>
-						<p>A lot of pain is a lot, enhanced monitoring procedures, but I give it time to as low as fatigue and great pain.</p>
+						<h2><?php print_r($service_title2) ?></h2>
+						<p> <?php print_r($services2) ?> </p>
 					</div>
                 </div><!-- end col -->
             </div><!-- end row -->
