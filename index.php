@@ -38,47 +38,22 @@ if (mysqli_num_rows($result1) > 0) {
 } else {
   echo "0 results";
 }
+$sqll = "SELECT service_id, service_title, services FROM service  ";
+$Serv_result = mysqli_query($conn, $sqll);
 
-$sql2 = "SELECT service_id, service_title, services FROM service WHERE service_id=301 ";
-$result2 = mysqli_query($conn, $sql2);
 
-if (mysqli_num_rows($result2) > 0) {
+
+$sql = "SELECT reviews_id, reviews_descr, review_title, review_comment, fullname, occupation_title FROM reviews WHERE reviews_id=601 ";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
   // output data of each row
-  while($row = mysqli_fetch_assoc($result2)) {
-    echo "service_id: " . $row["service_id"]. "<br>";
-    $service_id = $row["service_id"];
-    $service_title = $row["service_title"];
-    $services = $row["services"];
-  }
-} else {
-  echo "0 results";
-}
-
-$sql3 = "SELECT service_id, service_title, services FROM service WHERE service_id=302 ";
-$result3 = mysqli_query($conn, $sql3);
-
-if (mysqli_num_rows($result3) > 0) {
-  // output data of each row
-  while($row = mysqli_fetch_assoc($result3)) {
-    echo "service_id: " . $row["service_id"]. "<br>";
-    $service_id1 = $row["service_id"];
-    $service_title1 = $row["service_title"];
-    $services1 = $row["services"];
-  }
-} else {
-  echo "0 results";
-}
-
-$sql4 = "SELECT service_id, service_title, services FROM service WHERE service_id=303 ";
-$result4 = mysqli_query($conn, $sql4);
-
-if (mysqli_num_rows($result4) > 0) {
-  // output data of each row
-  while($row = mysqli_fetch_assoc($result4)) {
-    echo "service_id: " . $row["service_id"]. "<br>";
-    $service_id2 = $row["service_id"];
-    $service_title2 = $row["service_title"];
-    $services2 = $row["services"];
+  while($row = mysqli_fetch_assoc($result)) {
+    //echo "reviews_id: " . $row["reviews_id"]. "<br>";
+    $review_title = $row["review_title"];
+    $review_comment = $row["review_comment"];
+    $fullname = $row["fullname"];
+    $occupation_title = $row["occupation_title"];
   }
 } else {
   echo "0 results";
@@ -333,33 +308,22 @@ mysqli_close($conn);
             </div><!-- end title -->
 
             <div class="row">
-				<div class="col-md-4">
+
+            <?php if ( $Serv_result && !empty($Serv_result) ) :?>
+            <?php foreach ($Serv_result as $key =>$row) :{ $service_title = $row['service_title']; $services = $row['services'];}?>
+
+            <div class="col-md-4">
                     <div class="services-inner-box">
-						<div class="ser-icon">
-							<i class="flaticon-wedding-photo"></i>
-						</div>
-						<h2> <?php print_r($service_title) ?></h2>
-						<p> <?php print_r($services) ?> </p>
-					</div>
-                </div><!-- end col -->
-                <div class="col-md-4">
-                    <div class="services-inner-box">
-						<div class="ser-icon">
-							<i class="flaticon-image"></i>
-						</div>
-						<h2> <?php print_r($service_title1) ?> </h2>
-						<p> <?php print_r($services1) ?> </p>
-					</div>
-                </div><!-- end col -->
-				<div class="col-md-4">
-                    <div class="services-inner-box">
-						<div class="ser-icon">
-							<i class="flaticon-event"></i>
-						</div>
-						<h2><?php print_r($service_title2) ?></h2>
-						<p> <?php print_r($services2) ?> </p>
-					</div>
-                </div><!-- end col -->
+                        <div class="ser-icon">
+                          <i class="flaticon-wedding-photo"></i>
+                        </div>
+                        <h2> <?php echo $service_title ?></h2>
+                        <p> <?php  echo $services ?> </p>
+                      </div>
+            </div><!-- end col -->
+
+        <?php endforeach ?>
+        <?php endif?>
             </div><!-- end row -->
         </div><!-- end container -->
     </div><!-- end section -->
@@ -379,11 +343,11 @@ mysqli_close($conn);
 								<img src="uploads/testi_01.jpg" alt="" class="img-fluid">
 							</figure>
                             <div class="desc">
-                                <h3><i class="fa fa-quote-left"></i> Wonderful Support!</h3>
-                                <p>They have got my project on time with the competition with a sed highly skilled, and experienced & professional team.</p>
+                                <h3><i class="fa fa-quote-left"></i> <?php print_r($review_title) ?> </h3>
+                                <p> <?php print_r($review_comment) ?> </p>
                             </div>
                             <div class="testi-meta">
-                                <h4>James Fernando <small>- Manager of Racer</small></h4>
+                                <h4> <?php print_r($fullname) ?> <small> - <?php print_r($occupation_title) ?></small></h4>
                             </div>
                             <!-- end testi-meta -->
                         </div>
