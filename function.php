@@ -9,3 +9,4 @@
         return $request->execute() ? $request->fetchAll() : false; 
     }
 
+?>

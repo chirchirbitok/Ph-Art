@@ -1,5 +1,5 @@
 <?php
-    
+
    include_once "connection.php";
 
 
@@ -41,25 +41,8 @@ if (mysqli_num_rows($result1) > 0) {
 $sqll = "SELECT service_id, service_title, services FROM service  ";
 $Serv_result = mysqli_query($conn, $sqll);
 
-
-
-$sql = "SELECT reviews_id, reviews_descr, review_title, review_comment, fullname, occupation_title FROM reviews WHERE reviews_id=601 ";
-$result = mysqli_query($conn, $sql);
-
-if (mysqli_num_rows($result) > 0) {
-  // output data of each row
-  while($row = mysqli_fetch_assoc($result)) {
-    //echo "reviews_id: " . $row["reviews_id"]. "<br>";
-    $review_title = $row["review_title"];
-    $review_comment = $row["review_comment"];
-    $fullname = $row["fullname"];
-    $occupation_title = $row["occupation_title"];
-  }
-} else {
-  echo "0 results";
-}
-
-
+$review_sql = "SELECT reviews_id, reviews_descr, review_title, review_comment, fullname, occupation_title FROM reviews";
+$review_result = mysqli_query($conn, $review_sql);
 
 
 mysqli_close($conn);
@@ -250,14 +233,14 @@ mysqli_close($conn);
 			<div class="gallery-list row">
 				<div class="col-md-4 col-sm-6 gallery-grid photo_a">
 					<div class="gallery-single fix">
-						<img src="uploads/gallery_img-01.jpg" class="img-fluid" alt="Image">
+						  <img src="uploads/gallery_img-01.jpg" class="img-fluid" alt="Image">
 						<div class="box-content">
-							<div class="inner-content">
-								<h3 class="title">Wedding</h3>
-								<span class="post">Latest Photo</span>
+							<div class="inner-content" >
+								<h3 class="title"><a href="wedding-gallery.html">Wedding</h3>
+								<span class="post">Latest Photo</a></span>
 							</div>
 							<ul class="icon">
-								<li><a href="uploads/gallery_img-01.jpg" data-rel="prettyPhoto[gal]"><i class="fa fa-search"></i></a></li>
+								<li><a href="uploads/gallery_img-01.jpg" ><i class="fa fa-search"></i></a></li>
 								<li><a href="#"><i class="fa fa-link"></i></a></li>
 							</ul>
 						</div>
@@ -266,11 +249,11 @@ mysqli_close($conn);
 				
 				<div class="col-md-4 col-sm-6 gallery-grid photo_b">
 					<div class="gallery-single fix">
-						<img src="uploads/gallery_img-04.jpg" class="img-fluid" alt="Image">
+          <a href="wedding-gallery.html"/><img src="uploads/gallery_img-04.jpg" class="img-fluid" alt="Image">
 						<div class="box-content">
 							<div class="inner-content">
-								<h3 class="title">Models</h3>
-								<span class="post">Latest Photo</span>
+								<h3 class="title"><a href="wedding-gallery.html">Models</h3>
+								<span class="post">Latest Photo</a></span>
 							</div>
 							<ul class="icon">
 								<li><a href="uploads/gallery_img-04.jpg" data-rel="prettyPhoto[gal]"><i class="fa fa-search"></i></a></li>
@@ -282,15 +265,15 @@ mysqli_close($conn);
 				
 				<div class="col-md-4 col-sm-6 gallery-grid photo_c">
 					<div class="gallery-single fix">
-						<img src="uploads/gallery_img-07.jpg" class="img-fluid" alt="Image">
+          <a href=""><img src="uploads/gallery_img-07.jpg" class="img-fluid" alt="Image">
 						<div class="box-content">
 							<div class="inner-content">
-								<h3 class="title">Fashion</h3>
-								<span class="post">Latest Photo</span>
+								<h3 class="title"><a href="wedding-gallery.html">Fashion</h3>
+								<span class="post">Latest Photo</a></span>
 							</div>
 							<ul class="icon">
 								<li><a href="uploads/gallery_img-07.jpg" data-rel="prettyPhoto[gal]"><i class="fa fa-search"></i></a></li>
-								<li><a href="#"><i class="fa fa-link"></i></a></li>
+								
 							</ul>
 						</div>
 					</div>
@@ -313,13 +296,13 @@ mysqli_close($conn);
             <?php foreach ($Serv_result as $key =>$row) :{ $service_title = $row['service_title']; $services = $row['services'];}?>
 
             <div class="col-md-4">
-                    <div class="services-inner-box">
-                        <div class="ser-icon">
-                          <i class="flaticon-wedding-photo"></i>
+                  <div class="services-inner-box">
+                      <div class="ser-icon">
+                        <i class="flaticon-wedding-photo"></i>
                         </div>
                         <h2> <?php echo $service_title ?></h2>
                         <p> <?php  echo $services ?> </p>
-                      </div>
+                  </div>
             </div><!-- end col -->
 
         <?php endforeach ?>
@@ -338,93 +321,30 @@ mysqli_close($conn);
             <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <div class="testi-carousel owl-carousel owl-theme">
-                        <div class="testimonial clearfix">
-							<figure class="testimonial_img">
-								<img src="uploads/testi_01.jpg" alt="" class="img-fluid">
-							</figure>
-                            <div class="desc">
-                                <h3><i class="fa fa-quote-left"></i> <?php print_r($review_title) ?> </h3>
-                                <p> <?php print_r($review_comment) ?> </p>
-                            </div>
-                            <div class="testi-meta">
-                                <h4> <?php print_r($fullname) ?> <small> - <?php print_r($occupation_title) ?></small></h4>
-                            </div>
-                            <!-- end testi-meta -->
-                        </div>
-                        <!-- end testimonial -->
 
-                        <div class="testimonial clearfix">
-							<figure class="testimonial_img">
-								<img src="uploads/testi_02.jpg" alt="" class="img-fluid">
-							</figure>
-                            <div class="desc">
-                                <h3><i class="fa fa-quote-left"></i> Awesome Services!</h3>
-                                <p>Explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you completed.</p>
-                            </div>
-                            <div class="testi-meta">
-                                <h4>Jacques Philips <small>- Designer</small></h4>
-                            </div>
-                            <!-- end testi-meta -->
-                        </div>
-                        <!-- end testimonial -->
+                    <?php if ( $review_result && !empty($review_result) ) :?>
+                    <?php foreach ($review_result as $key =>$row) :{$review_title = $row["review_title"]; $review_comment = $row["review_comment"]; $fullname = $row["fullname"]; $occupation_title = $row["occupation_title"];}?>
 
-                        <div class="testimonial clearfix">
-							<figure class="testimonial_img">
-								<img src="uploads/testi_03.jpg" alt="" class="img-fluid">
-							</figure>
-                            <div class="desc">
-                                <h3><i class="fa fa-quote-left"></i> Great & Talented Team!</h3>
-                                <p>The master-builder of human happines no one rejects, dislikes avoids pleasure itself, because it is very pursue pleasure. </p>
-                            </div>
-                            <div class="testi-meta">
-                                <h4>Venanda Mercy <small>- Newyork City</small></h4>
-                            </div>
-                            <!-- end testi-meta -->
-                        </div>
-                        <!-- end testimonial -->
-                        <div class="testimonial clearfix">
-							<figure class="testimonial_img">
-								<img src="uploads/testi_01.jpg" alt="" class="img-fluid">
-							</figure>
-                            <div class="desc">
-                                <h3><i class="fa fa-quote-left"></i> Wonderful Support!</h3>
-                                <p>They have got my project on time with the competition with a sed highly skilled, and experienced & professional team.</p>
-                            </div>
-                            <div class="testi-meta">
-                                <h4>James Fernando <small>- Manager of Racer</small></h4>
-                            </div>
-                            <!-- end testi-meta -->
-                        </div>
-                        <!-- end testimonial -->
+                    <div class="testimonial clearfix">
+                                  <figure class="testimonial_img">
+                                      <img src="uploads/testi_01.jpg" alt="" class="img-fluid">
+                                  </figure>
+                                  <div class="desc">
+                                      <h3><i class="fa fa-quote-left"></i> <?php print_r($review_title) ?> </h3>
+                                      <p> <?php print_r($review_comment) ?> </p>
+                                  </div>
+                                  <div class="testi-meta">
+                                        <h4> <?php print_r($fullname) ?> <small> - <?php print_r($occupation_title) ?></small></h4>
+                                  </div>
+                                    <!-- end testi-meta -->
+                                </div>
+                                <!-- end testimonial -->
 
-                        <div class="testimonial clearfix">
-							<figure class="testimonial_img">
-								<img src="uploads/testi_02.jpg" alt="" class="img-fluid">
-							</figure>
-                            <div class="desc">
-                                <h3><i class="fa fa-quote-left"></i> Awesome Services!</h3>
-                                <p>Explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you completed.</p>
-                            </div>
-                            <div class="testi-meta">
-                                <h4>Jacques Philips <small>- Designer</small></h4>
-                            </div>
-                            <!-- end testi-meta -->
-                        </div>
-                        <!-- end testimonial -->
+                <?php endforeach ?>
+                <?php endif?>
+                    
+  
 
-                        <div class="testimonial clearfix">
-							<figure class="testimonial_img">
-								<img src="uploads/testi_03.jpg" alt="" class="img-fluid">
-							</figure>
-                            <div class="desc">
-                                <h3><i class="fa fa-quote-left"></i> Great & Talented Team!</h3>
-                                <p>The master-builder of human happines no one rejects, dislikes avoids pleasure itself, because it is very pursue pleasure. </p>
-                            </div>
-                            <div class="testi-meta">
-                                <h4>Venanda Mercy <small>- Newyork City</small></h4>
-                            </div>
-                            <!-- end testi-meta -->
-                        </div><!-- end testimonial -->
                     </div><!-- end carousel -->
                 </div><!-- end col -->
             </div><!-- end row -->
