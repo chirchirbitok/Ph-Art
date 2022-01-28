@@ -1,3 +1,20 @@
+<?php
+    include_once "connection.php";
+
+    $sql = "SELECT * FROM about";
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0){
+        //output data for each row 
+        while($row = mysqli_fetch_assoc($result)){
+            $about_id = $row['about_id'];
+            $about_title = $row['about_title'];
+            $about_text = $row['about_text'];
+            $about_image = $row['about_image'];
+
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,6 +34,7 @@
     <!-- Site Icons -->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -27,6 +45,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
 	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+  <script src="js/custom.js"></script> 
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -102,24 +122,14 @@
           <div class="detail-box">
             <div class="heading_container">
               <h2>
-                About Us
+               <?php echo $about_title ?>
                 <hr>
               </h2>
             </div>
-            <p>
-              With staff in Europe, the US and Australia we are an international collaboration of 
-              member organizations and individuals actively learning from and supporting each other 
-              in the development and use of PDF technology. Our membership spans businesses, 
-              non-profit organizations, government agencies and individual consultants from over 
-              20 countries world-wide.<span id="dots">....</span>
-            <span id="more"> invite developers of PDF solutions; companies that work with PDF in document management 
-            and enterprise content management; interested individuals; and users who want to advance 
-            their implementation of PDF technology in their organizations, to join, learn from and 
-            contribute to our efforts.</span>
+            <p class="readMore">
+              <?php echo $about_text ?><span id="dots">....</span>
+            <span id="more"></span>
             </p>
-              <button onclick="readML()" id="myBtn" >
-                Read More
-              </button>
           </div>
         </div>
       </div>
@@ -360,7 +370,7 @@
   <script src="js/custom.js"></script>
   
   <!-- Read more or less about us fuction -->
-  <script>
+  <!-- <script>
     function readML(){
       var dots = document.getElementById("dots");
       var moreText =document.getElementById("more");
@@ -376,8 +386,31 @@
         moreText.style.display = "inline"
       }
     }
+  </script> -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+  var max = 700;
+  $(".readMore").each(function() {
+      var str = $(this).text();
+      if ($.trim(str).length > max) {
+          var subStr = str.substring(0, max);
+          var hiddenStr = str.substring(max, $.trim(str).length);
+          $(this).empty().html(subStr);
+          $(this).append(' <a href="javascript:void(0);" class="link">Read more…</a>');
+          $(this).append('<span class="addText">' + hiddenStr + '</span>');
+      }
+  });
+  $(".link").click(function() {
+      $(this).siblings(".addText").contents().unwrap();
+      $(this).remove();
+  });
+});
   </script>
-  
+    <style>
+      .readMore .addText {
+      display: none;
+      }
 
+    </style>
 </body>
 </html>
