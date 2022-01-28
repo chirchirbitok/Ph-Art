@@ -93,7 +93,7 @@
                     <div class="col-md-12">
                         <div class="button-group filter-button-group">
                             <a href="index.html"> <button data-filter="*">Home</button></a>
-                            <a href="wedding-gallery.html"> <button data-filter="*">Gallery</button></a>
+                            <a href="wedding-gallery.html" > <button data-filter="*" >Gallery</button></a>
                             <a href="about_me.html"><button data-filter=".photo_a">About</button> </a>
                             <!-- <a href="services.html"><button data-filter="">Service</button></a> -->
                             <!-- <a href="reviews.html"><button data-filter="">Reviews</button></a> -->
