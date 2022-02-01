@@ -1,3 +1,16 @@
+<?php
+  
+  include_once "connection.php";
+
+
+  $package_sql = "SELECT package_id, package_name, package_type FROM package";
+  $result = mysqli_query($conn, $package_sql);
+
+
+
+ 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -213,26 +226,44 @@
   
       <div class="row text-center align-items-end">
         <!-- Pricing Table-->
+          
         <div class="col-lg-4 mb-5 mb-lg-0">
           <div class="bg-white p-5 rounded-lg shadow">
             <!-- <h1 class="h6 text-uppercase font-weight-bold mb-4">Basic</h1> -->
-            <h2 class="h1 font-weight-bold"><span class="text-small font-weight-normal ml-2">Silver</span></h2>
+            
+          
+            <h2 class="h1 font-weight-bold"><span class="text-small font-weight-normal ml-2">Silver </span></h2>
   
             <div class="custom-separator my-4 mx-auto bg-primary"></div>
-  
+
+
             <ul class="list-unstyled my-5 text-small text-left" >
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> 1 Professional Videographer</li>
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> 1 Professional Photographer</li>
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i>1 Technical Assistant</li>
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> 1 Professional Full HD Camera (for video)</li>
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> 1 Advanced DSLR Photography Camera</li>
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> 30 Post Edited Pictures</li>
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i>Coverage (Morning Preparations and Interviews, Church Session, Vows and Engagement Party, Photo session and Reception Coverage</li>
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> 1 A4 Sized Photo Mount</li>
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> <strong>1 Master</strong>  Edited DVD Wedding Video</li>
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> 1 Master Edited 4GB Flash Disk Wedding Video</li>
+            <?php if ( $result && !empty($result) ) :?>
+            <?php foreach ($result as $key =>$row) :{
               
-              <li class="mb-3 text-muted"><i class="fa fa-times mr-2"></i>
+                $package_name = $row["package_name"];
+                    if ($package_name == 901) {
+                      if($count++ < 9 ){
+                        $package_type = $row["package_type"];
+                       
+                        $package_id = $row["package_id"];
+                         
+                         ?> <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> <?php echo $package_type ?> </li><?php
+                       
+                      }else{
+                        ?><li class="mb-3 text-muted"><i class="fa fa-times mr-2"></i>
+                        <del> <?php echo $package_type ?></del>
+              </li> <?php
+                      }
+                       
+                        
+                        
+                        
+                      }                
+            }?>
+              
+
+              <!-- <li class="mb-3 text-muted"><i class="fa fa-times mr-2"></i>
                 <del>1 A2 Frame Enlargement</del>
               </li>
               <li class="mb-3 text-muted">
@@ -242,10 +273,15 @@
               <li class="mb-3 text-muted">
                 <i class="fa fa-times mr-2"></i>
                 <del>2 Parents Album (100 pics each)</del>
-              </li>
-              </ul>
+              </li> -->
+              <?php endforeach ?>
+               <?php endif?>
+            </ul>
+
             <a href="#" class="btn btn-primary btn-block p-2 shadow rounded-pill">Subscribe</a>
+            
           </div>
+
         </div>
         <!-- END -->
   
@@ -259,17 +295,21 @@
             <div class="custom-separator my-4 mx-auto bg-primary"></div>
   
             <ul class="list-unstyled my-5 text-small text-left">
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> 1 Professional Videographer</li>
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> 1 Professional Photographer</li>
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i>1 Technical Assistant</li>
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> 1 Professional Full HD Camera (for video)</li>
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> 1 Advanced DSLR Photography Camera</li>
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> 30 Post Edited Pictures</li>
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i>Coverage (Morning Preparations and Interviews, Church Session, Vows and Engagement Party, Photo session and Reception Coverage</li>
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> 1 A4 Sized Photo Mount</li>
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> <strong>4 Master</strong>  Edited DVD Wedding Video</li>
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> 1 Master Edited 4GB Flash Disk Wedding Video</li>
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i>1 A2 Frame Enlargement</li>
+            <?php if ( $result && !empty($result) ) :?>
+            <?php foreach ($result as $key =>$row) :{
+              
+                $package_name = $row["package_name"];
+                    if ($package_name == 902) {
+                       $package_type = $row["package_type"];
+                       
+                       $package_id = $row["package_id"];
+
+                        ?> <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> <?php echo $package_type ?> </li><?php
+                        
+                        
+                      }                
+            }?>
+              <!-- <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> 1 Professional Videographer</li>
               
               <li class="mb-3 text-muted">
                 <i class="fa fa-times mr-2"></i>
@@ -278,8 +318,10 @@
               <li class="mb-3 text-muted">
                 <i class="fa fa-times mr-2"></i>
                 <del>2 Parents Album (100 pics each)</del>
-              </li>
+              </li> -->
               
+              <?php endforeach ?>
+               <?php endif?>
             </ul>
             <a href="#" class="btn btn-primary btn-block p-2 shadow rounded-pill">Subscribe</a>
           </div>
@@ -296,20 +338,25 @@
             <div class="custom-separator my-4 mx-auto bg-primary"></div>
   
             <ul class="list-unstyled my-5 text-small text-left">
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> 1 Professional Videographer</li>
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> 1 Professional Photographer</li>
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i>1 Technical Assistant</li>
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> 1 Professional Full HD Camera (for video)</li>
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> 1 Advanced DSLR Photography Camera</li>
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> 30 Post Edited Pictures</li>
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i>Coverage (Morning Preparations and Interviews, Church Session, Vows and Engagement Party, Photo session and Reception Coverage</li>
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> 1 A4 Sized Photo Mount</li>
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> <strong>4 Master</strong>  Edited DVD Wedding Video</li>
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> 1 Master Edited 4GB Flash Disk Wedding Video</li>
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i>1 A2 Frame Enlargement</li>
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> 200 Pictures Printed Album for the Couple</li>
-              <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i>2 Parents Album (100 pics each)</li>
+            <?php if ( $result && !empty($result) ) :?>
+            <?php foreach ($result as $key =>$row) :{
+              
+                $package_name = $row["package_name"];
+                    if ($package_name == 902) {
+                       $package_type = $row["package_type"];
+                       
+                       $package_id = $row["package_id"];
 
+                        ?> <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> <?php echo $package_type ?> </li><?php
+                        if($package_type->lengths) {
+                          echo "The number is: $package_id <br>";
+                        } 
+                        
+                      }                
+            }?>
+
+            <?php endforeach ?>
+            <?php endif?>
             </ul>
             <a href="#" class="btn btn-primary btn-block p-2 shadow rounded-pill">Subscribe</a>
           </div>
