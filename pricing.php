@@ -6,6 +6,8 @@
   $package_sql = "SELECT package_id, package_name, package_type FROM package";
   $result = mysqli_query($conn, $package_sql);
 
+
+
   
 
 
@@ -242,7 +244,7 @@
             <?php if ( $result && !empty($result) ) :?>
             <?php foreach ($result as $key =>$row) :{            
                 $package_name = $row["package_name"]; 
-                $package_type = $row["package_type"] ;
+                $package_type = $row["package_type"];
                     if ($package_name == 901) :
                         if($count++ < 9 ):
                           
