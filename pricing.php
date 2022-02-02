@@ -6,6 +6,7 @@
   $package_sql = "SELECT package_id, package_name, package_type FROM package";
   $result = mysqli_query($conn, $package_sql);
 
+  
 
 
  
@@ -239,41 +240,24 @@
 
             <ul class="list-unstyled my-5 text-small text-left" >
             <?php if ( $result && !empty($result) ) :?>
-            <?php foreach ($result as $key =>$row) :{
-              
-                $package_name = $row["package_name"];
-                    if ($package_name == 901) {
-                      if($count++ < 9 ){
-                        $package_type = $row["package_type"];
-                       
-                        $package_id = $row["package_id"];
-                         
-                         ?> <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> <?php echo $package_type ?> </li><?php
-                       
-                      }else{
-                        ?><li class="mb-3 text-muted"><i class="fa fa-times mr-2"></i>
-                        <del> <?php echo $package_type ?></del>
-              </li> <?php
-                      }
-                       
+            <?php foreach ($result as $key =>$row) :{            
+                $package_name = $row["package_name"]; 
+                $package_type = $row["package_type"] ;
+                    if ($package_name == 901) :
+                        if($count++ < 9 ):
+                          
+                          
+                          ?> <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> <?php echo $package_type ?> </li><?php
                         
-                        
-                        
-                      }                
+                        else:
+                          ?><li class="mb-3 text-muted"><i class="fa fa-times mr-2"></i>
+                          <del> <?php echo $package_type ?></del>
+                          </li> <?php
+                        endif;
+                      
+                      endif;               
             }?>
               
-
-              <!-- <li class="mb-3 text-muted"><i class="fa fa-times mr-2"></i>
-                <del>1 A2 Frame Enlargement</del>
-              </li>
-              <li class="mb-3 text-muted">
-                <i class="fa fa-times mr-2"></i>
-                <del>200 Pictures Printed Album for the Couple</del>
-              </li>
-              <li class="mb-3 text-muted">
-                <i class="fa fa-times mr-2"></i>
-                <del>2 Parents Album (100 pics each)</del>
-              </li> -->
               <?php endforeach ?>
                <?php endif?>
             </ul>
@@ -296,32 +280,29 @@
   
             <ul class="list-unstyled my-5 text-small text-left">
             <?php if ( $result && !empty($result) ) :?>
-            <?php foreach ($result as $key =>$row) :{
-              
-                $package_name = $row["package_name"];
+            <?php foreach ($result as $key =>$row) :{            
+                $package_name = $row["package_name"]; 
+                $package_type = $row["package_type"] ;
                     if ($package_name == 902) {
-                       $package_type = $row["package_type"];
-                       
-                       $package_id = $row["package_id"];
-
-                        ?> <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> <?php echo $package_type ?> </li><?php
+                        if($count++ < 9 ){
+                          
+                          
+                          ?> <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> <?php echo $package_type ?> </li><?php
                         
-                        
+                        }else{
+                          $count++
+                          ?><li class="mb-3 text-muted"><i class="fa fa-times mr-2"></i>
+                          <del> <?php echo $package_type ?></del>
+                          </li> <?php
+                        }
+                
                       }                
             }?>
-              <!-- <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> 1 Professional Videographer</li>
-              
-              <li class="mb-3 text-muted">
-                <i class="fa fa-times mr-2"></i>
-                <del>200 Pictures Printed Album for the Couple</del>
-              </li>
-              <li class="mb-3 text-muted">
-                <i class="fa fa-times mr-2"></i>
-                <del>2 Parents Album (100 pics each)</del>
-              </li> -->
               
               <?php endforeach ?>
                <?php endif?>
+              
+              
             </ul>
             <a href="#" class="btn btn-primary btn-block p-2 shadow rounded-pill">Subscribe</a>
           </div>
@@ -339,24 +320,30 @@
   
             <ul class="list-unstyled my-5 text-small text-left">
             <?php if ( $result && !empty($result) ) :?>
-            <?php foreach ($result as $key =>$row) :{
-              
-                $package_name = $row["package_name"];
-                    if ($package_name == 902) {
-                       $package_type = $row["package_type"];
-                       
-                       $package_id = $row["package_id"];
-
-                        ?> <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> <?php echo $package_type ?> </li><?php
-                        if($package_type->lengths) {
-                          echo "The number is: $package_id <br>";
-                        } 
+            <?php foreach ($result as $key =>$row) :{            
+                $package_name = $row["package_name"]; 
+                $package_type = $row["package_type"] ;
+                    if ($package_name == 903) {
+                        if($count++ < 9 ){
+                          
+                          
+                          ?> <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> <?php echo $package_type ?> </li><?php
                         
+                        }else{
+                          $count++
+                          ?><li class="mb-3 text-muted"><i class="fa fa-times mr-2"></i>
+                          <del> <?php echo $package_type ?></del>
+                          </li> <?php
+                        }
+                
                       }                
             }?>
-
-            <?php endforeach ?>
-            <?php endif?>
+              
+              <?php endforeach ?>
+               <?php endif?>
+           
+              
+              
             </ul>
             <a href="#" class="btn btn-primary btn-block p-2 shadow rounded-pill">Subscribe</a>
           </div>
