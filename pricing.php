@@ -5,11 +5,7 @@
 
   $package_sql = "SELECT package_id, package_name, package_type FROM package";
   $result = mysqli_query($conn, $package_sql);
-
-
-
-  
-
+  $res = mysqli_fetch_assoc($result);
 
  
 ?>
@@ -257,7 +253,9 @@
                           </li> <?php
                         endif;
                       
-                      endif;               
+                      endif;     
+                      
+                      
             }?>
               
               <?php endforeach ?>
@@ -283,10 +281,10 @@
             <ul class="list-unstyled my-5 text-small text-left">
             <?php if ( $result && !empty($result) ) :?>
             <?php foreach ($result as $key =>$row) :{            
-                $package_name = $row["package_name"]; 
-                $package_type = $row["package_type"] ;
+                    $package_name = $row["package_name"]; 
+                    $package_type = $row["package_type"];
                     if ($package_name == 902) {
-                        if($count++ < 9 ){
+                        if($count++ < 23 ){
                           
                           
                           ?> <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> <?php echo $package_type ?> </li><?php
@@ -326,7 +324,7 @@
                 $package_name = $row["package_name"]; 
                 $package_type = $row["package_type"] ;
                     if ($package_name == 903) {
-                        if($count++ < 9 ){
+                        if($count++ < 42 ){
                           
                           
                           ?> <li class="mb-3"><i class="fa fa-check mr-2 text-primary"></i> <?php echo $package_type ?> </li><?php
