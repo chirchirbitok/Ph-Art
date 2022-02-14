@@ -77,19 +77,19 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container-fluid">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">
-			<img class="img-fluid" src="images/logoo.jpeg" alt="" border-radius=" 8px"  width="150px"/>
+			<img class="img-fluid" src="images/logo2.png" alt="" border-radius=" 8px"  width="150px"/>
 		</a>
         <div id= "gallery" class="section_1b">
             <div class="container">
                 <div class="gallery-menu text-center row">
                     <div class="col-md-12">
                         <div class="button-group filter-button-group">
-                            <a href="index.html"> <button data-filter="*">Home</button></a>
+                            <a href="index.php"> <button data-filter="*">Home</button></a>
                             <a href="wedding-gallery.html"> <button data-filter="*">Gallery</button></a>
-                            <a href="about_me.html"><button data-filter=".photo_a">About </button> </a>
+                            <a href="about_me.php"><button data-filter=".photo_a">About </button> </a>
                             <!-- <a href="services.html"><button data-filter="">Service</button></a> -->
                             <!-- <a href="reviews.html"><button data-filter="">Reviews</button></a> -->
-                            <a href="pricing.html"><button data-filter=".photo_a"> Packages</button></a>
+                            <a href="pricing.php"><button data-filter=".photo_a"> Packages</button></a>
                             <a href="contact_me.html"><button data-filter="">Contact Us</button></a>
                         </div>
                     </div>
@@ -368,7 +368,7 @@
           <div class="info_logo">
             <div>
               <a href="">
-                <img src="images/logo.png" alt="" />
+                <img src="images/logo2.png" alt="" />
                 <span>
                   Petlor
                 </span>

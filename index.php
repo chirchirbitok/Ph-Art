@@ -114,19 +114,19 @@ mysqli_close($conn);
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container-fluid">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">
-			<img class="img-fluid" src="images/logoo.jpeg" alt=""   border-radius=" 8px"  width="150px"/>
+			<img class="img-fluid" src="images/logo2.png" alt=""   border-radius=" 8px"  width="150px"/>
 		</a>
         <div id= "gallery" class="section_1b">
             <div class="container">
                 <div class="gallery-menu text-center row">
                     <div class="col-md-12">
                         <div class="button-group filter-button-group">
-                            <a href="index.html"> <button data-filter="*">Home</button></a>
+                            <a href="index.php"> <button data-filter="*">Home</button></a>
                             <a href="wedding-gallery.html"> <button data-filter="*">Gallery</button></a>
-                            <a href="about_me.html"><button data-filter=".photo_a">About</button> </a>
+                            <a href="about_me.php"><button data-filter=".photo_a">About</button> </a>
                             <!-- <a href="services.html"><button data-filter="">Service</button></a> -->
                             <!-- <a href="reviews.html"><button data-filter="">Reviews</button></a> -->
-                            <a href="pricing.html"><button data-filter=".photo_a"> Packages</button></a>
+                            <a href="pricing.php"><button data-filter=".photo_a"> Packages</button></a>
                             <a href="contact_me.html"><button data-filter="">Contact Us</button></a>
                         </div>
                     </div>
@@ -204,7 +204,7 @@ mysqli_close($conn);
 
                 <div class="col-md-6">
                     <div class="right-box-pro wow fadeIn">
-                        <img src="uploads/about_04.jpg" alt="" class="img-fluid img-rounded">
+                        <img src="uploads/about_04.jpeg" alt="" class="img-fluid img-rounded">
                     </div><!-- end media -->
                 </div><!-- end col -->
             </div><!-- end row -->
@@ -233,14 +233,14 @@ mysqli_close($conn);
 			<div class="gallery-list row">
 				<div class="col-md-4 col-sm-6 gallery-grid photo_a">
 					<div class="gallery-single fix">
-						  <img src="uploads/gallery_img-01.jpg" class="img-fluid" alt="Image">
+						  <img src="uploads/gallery_img-01.png" class="img-fluid" alt="Image">
 						<div class="box-content">
 							<div class="inner-content" >
 								<h3 class="title"><a href="wedding-gallery.html">Wedding</h3>
 								<span class="post">Latest Photo</a></span>
 							</div>
 							<ul class="icon">
-								<li><a href="uploads/gallery_img-01.jpg" ><i class="fa fa-search"></i></a></li>
+								<li><a href="uploads/gallery_img-01.png" ><i class="fa fa-search"></i></a></li>
 								<li><a href="#"><i class="fa fa-link"></i></a></li>
 							</ul>
 						</div>
@@ -249,14 +249,14 @@ mysqli_close($conn);
 				
 				<div class="col-md-4 col-sm-6 gallery-grid photo_b">
 					<div class="gallery-single fix">
-          <a href="wedding-gallery.html"/><img src="uploads/gallery_img-04.jpg" class="img-fluid" alt="Image">
+          <a href="wedding-gallery.html"/><img src="uploads/gallery_img-2.jpeg" class="img-fluid" alt="Image">
 						<div class="box-content">
 							<div class="inner-content">
 								<h3 class="title"><a href="wedding-gallery.html">Models</h3>
 								<span class="post">Latest Photo</a></span>
 							</div>
 							<ul class="icon">
-								<li><a href="uploads/gallery_img-04.jpg" data-rel="prettyPhoto[gal]"><i class="fa fa-search"></i></a></li>
+								<li><a href="uploads/gallery_img-2.jpeg" data-rel="prettyPhoto[gal]"><i class="fa fa-search"></i></a></li>
 								<li><a href="#"><i class="fa fa-link"></i></a></li>
 							</ul>
 						</div>
@@ -265,14 +265,14 @@ mysqli_close($conn);
 				
 				<div class="col-md-4 col-sm-6 gallery-grid photo_c">
 					<div class="gallery-single fix">
-          <a href=""><img src="uploads/gallery_img-07.jpg" class="img-fluid" alt="Image">
+          <a href=""><img src="uploads/gallery_img-07.jpeg" class="img-fluid" alt="Image">
 						<div class="box-content">
 							<div class="inner-content">
-								<h3 class="title"><a href="wedding-gallery.html">Fashion</h3>
+								<h3 class="title"><a href="wedding-gallery.html">Birthday</h3>
 								<span class="post">Latest Photo</a></span>
 							</div>
 							<ul class="icon">
-								<li><a href="uploads/gallery_img-07.jpg" data-rel="prettyPhoto[gal]"><i class="fa fa-search"></i></a></li>
+								<li><a href="uploads/gallery_img-07.jpeg" data-rel="prettyPhoto[gal]"><i class="fa fa-search"></i></a></li>
 								
 							</ul>
 						</div>
@@ -453,7 +453,7 @@ mysqli_close($conn);
           <div class="info_logo">
             <div>
               <a href="">
-                <img src="images/logoo.jpeg" alt="" />
+                <img src="images/logo2.png" alt="" />
                 <span>
                   Petlor
                 </span>
