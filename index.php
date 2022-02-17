@@ -116,11 +116,11 @@ mysqli_close($conn);
         <a class="navbar-brand js-scroll-trigger" href="#page-top">
 			<img class="img-fluid" src="images/logo2.png" alt=""   border-radius=" 8px"  width="150px"/>
 		</a>
-        <div id= "gallery" class="section_1b">
-            <div class="container">
-                <div class="gallery-menu text-center row">
-                    <div class="col-md-12">
-                        <div class="button-group filter-button-group">
+        <div id= "gallery" class="section_1b" >
+            <div class="container" >
+                <div class="gallery-menu text-center row" >
+                    <div class="col-md-12" >
+                        <div class="button-group filter-button-group" >
                             <a href="index.php"> <button data-filter="*">Home</button></a>
                             <a href="wedding-gallery.html"> <button data-filter="*">Gallery</button></a>
                             <a href="about_me.php"><button data-filter=".photo_a">About</button> </a>
@@ -170,35 +170,35 @@ mysqli_close($conn);
 						<div class="skill-bar-box">
 							<h2> Photograpgy Skills </h2>
 							<div class="skillbar" data-percent="<?php print_r($wedding_skill) ?>">
-								<span class="skillbar-title" style="background: #db5c87;">Wedding</span>
-								<p class="skillbar-bar" style="background: #e45050;"></p>
+								<span class="skillbar-title" style="background: #9A1B26;">Wedding</span>
+								<p class="skillbar-bar" style="background: #9A1B26;"></p>
 								<span class="skill-bar-percent"></span>
 							</div>
 							<!-- End Skill Bar -->
 							
 							<div class="skillbar" data-percent="<?php print_r($fashion_skill) ?>">
-								<span class="skillbar-title" style="background: #db5c87;">Fashion</span>
-								<p class="skillbar-bar" style="background: #e45050;"></p>
+								<span class="skillbar-title" style="background: #9A1B26;">Fashion</span>
+								<p class="skillbar-bar" style="background: #9A1B26;"></p>
 								<span class="skill-bar-percent"></span>
 							</div>
 							<!-- End Skill Bar -->
 							
 							<div class="skillbar" data-percent="<?php print_r($model_skill) ?>">
-								<span class="skillbar-title" style="background: #db5c87;">Models</span>
-								<p class="skillbar-bar" style="background: #e45050;"></p>
+								<span class="skillbar-title" style="background: #9A1B26;">Models</span>
+								<p class="skillbar-bar" style="background: #9A1B26;"></p>
 								<span class="skill-bar-percent"></span>
 							</div>
 							<!-- End Skill Bar -->
 							
 							<div class="skillbar" data-percent="<?php print_r($photography_skills) ?>">
-								<span class="skillbar-title" style="background: #db5c87;">Photograpgy</span>
-								<p class="skillbar-bar" style="background: #e45050;"></p>
+								<span class="skillbar-title" style="background: #9A1B26;">Photograpgy</span>
+								<p class="skillbar-bar" style="background: #9A1B26;"></p>
 								<span class="skill-bar-percent"></span>
 							</div>
 						<!-- End Skill Bar -->
 						</div>
 						
-                        <a href="#" class="sim-btn btn-hover-new" data-text="My Works"><span>My Works</span></a>
+                        <a href="#" class="sim-btn btn-hover-new" data-text="My Works" style="background: #2A2977;"><span>My Works</span></a>
                     </div><!-- end messagebox -->
                 </div><!-- end col -->
 
@@ -297,7 +297,7 @@ mysqli_close($conn);
 
             <div class="col-md-4">
                   <div class="services-inner-box">
-                      <div class="ser-icon">
+                      <div class="ser-icon" style="background: #9A1B26;">
                         <i class="flaticon-wedding-photo"></i>
                         </div>
                         <h2> <?php echo $service_title ?></h2>
@@ -320,13 +320,13 @@ mysqli_close($conn);
 
             <div class="row">
                 <div class="col-md-12 col-sm-12">
-                    <div class="testi-carousel owl-carousel owl-theme">
+                    <div class="testi-carousel owl-carousel owl-theme" >
 
                     <?php if ( $review_result && !empty($review_result) ) :?>
                     <?php foreach ($review_result as $key =>$row) :{$review_title = $row["review_title"]; $review_comment = $row["review_comment"]; $fullname = $row["fullname"]; $occupation_title = $row["occupation_title"];}?>
 
-                    <div class="testimonial clearfix">
-                                  <figure class="testimonial_img">
+                    <div class="testimonial clearfix" > 
+                                  <figure class="testimonial_img" >
                                       <img src="uploads/testi_01.jpg" alt="" class="img-fluid">
                                   </figure>
                                   <div class="desc">
@@ -431,15 +431,15 @@ mysqli_close($conn);
 	</div> -->
 
     <!-- Pricing-->
-    <div id="contact" class="section db">
-        <div class="container">
+    <div id="contact" class="section db" >
+        <div class="container" >
             <div class="section-title text-center">
-                <h3 style="text-transform:uppercase" >contact us to start planning</h3>
+                <h3 style="text-transform:uppercase "  >contact us to start planning</h3>
                 <p>If you're ready to begin this friendship, send us a message. We will respond back with a full guide and some questions to help us get to know you!</p>
             </div><!-- end title -->
             <div class="col-lg-12 text-center">
                 <div id="success"></div>
-                <button id="sendMessageButton" class="sim-btn btn-hover-new" data-text="Let's Connect" type="submit">Let's Connect</button>
+                <button id="sendMessageButton" class="sim-btn btn-hover-new" data-text="Let's Connect" type="submit" style="background: #db5c87;">Let's Connect</button>
             </div>
 
         </div><!-- end container -->
