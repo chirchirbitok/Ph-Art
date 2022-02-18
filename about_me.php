@@ -14,6 +14,29 @@
 
         }
     }
+
+    $sql1 = "SELECT profile_id, full_name, bio, profile_image, wedding_skill, fashion_skill, model_skill, photography_skills FROM profile";
+$result1 = mysqli_query($conn, $sql1);
+
+if (mysqli_num_rows($result1) > 0) {
+  // output data of each row
+  while($row = mysqli_fetch_assoc($result1)) {
+    //echo "profile_id: " . $row["profile_id"]. " - full_name: " . $row["full_name"].  "<br>";
+    $profile_id = $row["profile_id"];
+    $full_name = $row["full_name"];
+    $bio = $row["bio"];
+    $profile_image = $row["profile_image"];
+    $wedding_skill = $row["wedding_skill"];
+    $fashion_skill = $row["fashion_skill"];
+    $model_skill = $row["model_skill"];
+    $photography_skills = $row["photography_skills"];
+  }
+} else {
+  echo "0 results";
+}
+
+$sqll = "SELECT service_id, service_title, services FROM service  ";
+$Serv_result = mysqli_query($conn, $sqll);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -139,91 +162,77 @@
   <!-- end about section -->
 
 
-    <div id="services" class="section lb">
-      <div class="container">
-          <div class="section-title text-center">
-              <h3>- What We Do -</h3>
-              <p>Each one of the players needs to do so without any arrows. For some walkers, not some laughter.</p>
-          </div><!-- end title -->
+  <div id="services" class="section lb">
+        <div class="container">
+              <div class="section-title text-center">
+                  <h3>Services</h3>
+                  <p> Each one of the players needs no arrows to do so. For some walkers, not some laughter.</p>
+              </div><!-- end title -->
 
           <div class="row">
-      <div class="col-md-4">
+
+            <?php if ( $Serv_result && !empty($Serv_result) ) :?>
+            <?php foreach ($Serv_result as $key =>$row) :{ $service_title = $row['service_title']; $services = $row['services'];}?>
+
+            <div class="col-md-4">
                   <div class="services-inner-box">
-          <div class="ser-icon">
-            <i class="flaticon-wedding-photo"></i>
-          </div>
-          <h2>Wedding Photography</h2>
-          <p>A lot of pain is a lot, enhanced monitoring procedures, but I give it time to as low as fatigue and great pain.</p>
-        </div>
-              </div><!-- end col -->
-              <div class="col-md-4">
-                  <div class="services-inner-box">
-          <div class="ser-icon">
-            <i class="flaticon-image"></i>
-          </div>
-          <h2>Portrait photography</h2>
-          <p>A lot of pain is a lot, nhanced monitoring procedures, but I give it time to as low as fatigue and great pain.</p>
-        </div>
-              </div><!-- end col -->
-      <div class="col-md-4">
-                  <div class="services-inner-box">
-          <div class="ser-icon">
-            <i class="flaticon-event"></i>
-          </div>
-          <h2>Event Photography</h2>
-          <p>A lot of pain is a lot, enhanced monitoring procedures, but I give it time to as low as fatigue and great pain.</p>
-        </div>
-              </div><!-- end col -->
-          </div><!-- end row -->
+                      <div class="ser-icon" style="background: #9A1B26;">
+                        <i class="flaticon-wedding-photo"></i>
+                        </div>
+                        <h2> <?php echo $service_title ?></h2>
+                        <p> <?php  echo $services ?> </p>
+            </div>
+          </div><!-- end col -->
+
+        <?php endforeach ?>
+        <?php endif?>
+            </div><!-- end row -->
       </div><!-- end container -->
   </div><!-- end section -->
 
 
-    <div id="about" class="section wb" >
+  <div id="about" class="section wb">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
                     <div class="message-box">                        
-                        <h2> Jessica Chan </h2>
-                        <p> Jessica Sample grew up in Los Angeles and has been traveling far from home and taking pictures ever since childhood.   Her parents owned a stock footage company and she accompanied them across the world with her camera to places as far flung as Bhutan, Tibet, Africa, Europe, and Indonesia. 
-
-                            She was previously the Deputy Photo Editor at Travel + Leisure Magazine in New York and a frequent contributor to the magazine.  She has a Bachelor’s degree from Brown University and has studied at the International Center of Photography.</p>
-						<p>Jessica is currently based in Los Angeles.  She is also available for travel assignments departing New York City.  She is the curator of Wanderlust: A Silent Auction Benefit that auctions travel photography prints to raise money for environmental charities.</p>
-
+                        <h2><?php print_r($full_name) ?></h2>
+                        <p> <?php print_r($bio) ?> </p>
 						
-						<div class="skill-bar-box">
-							<h2> Photograpgy Skills </h2>
-							<div class="skillbar" data-percent="60">
-								<span class="skillbar-title" >Wedding</span>
-								<p class="skillbar-bar" ></p>
-								<span class="skill-bar-percent"></span>
-							</div>
-							<!-- End Skill Bar -->
-							
-							<div class="skillbar" data-percent="80">
-								<span class="skillbar-title">Fashion</span>
-								<p class="skillbar-bar" ></p>
-								<span class="skill-bar-percent"></span>
-							</div>
-							<!-- End Skill Bar -->
-							
-							<div class="skillbar" data-percent="70">
-								<span class="skillbar-title">Models</span>
-								<p class="skillbar-bar" ></p>
-								<span class="skill-bar-percent"></span>
-							</div>
-							<!-- End Skill Bar -->
-							
-							<div class="skillbar" data-percent="90">
-								<span class="skillbar-title" >Photograpgy</span>
-								<p class="skillbar-bar" ></p>
-								<span class="skill-bar-percent"></span>
-							</div>
-						<!-- End Skill Bar -->
-						</div>
-                
-                        <a href="#" class="sim-btn btn-hover-new" data-text="My Works" style="border: none;"><span>My Works</span></a>
-                    </div><!-- end messagebox -->
+						
+                        <div class="skill-bar-box">
+                          <h2> Photograpgy Skills </h2>
+                          <div class="skillbar" data-percent="<?php print_r($wedding_skill) ?>">
+                            <span class="skillbar-title" >Wedding</span>
+                            <p class="skillbar-bar" ></p>
+                            <span class="skill-bar-percent"></span>
+                          </div>
+                          <!-- End Skill Bar -->
+                          
+                          <div class="skillbar" data-percent="<?php print_r($fashion_skill) ?>">
+                            <span class="skillbar-title" >Fashion</span>
+                            <p class="skillbar-bar"></p>
+                            <span class="skill-bar-percent"></span>
+                          </div>
+                          <!-- End Skill Bar -->
+                          
+                          <div class="skillbar" data-percent="<?php print_r($model_skill) ?>">
+                            <span class="skillbar-title" >Models</span>
+                            <p class="skillbar-bar" ></p>
+                            <span class="skill-bar-percent"></span>
+                          </div>
+                          <!-- End Skill Bar -->
+                          
+                          <div class="skillbar" data-percent="<?php print_r($photography_skills) ?>">
+                            <span class="skillbar-title" >Photograpgy</span>
+                            <p class="skillbar-bar" ></p>
+                            <span class="skill-bar-percent"></span>
+                          </div>
+                        <!-- End Skill Bar -->
+                        </div>
+						
+                        <a href="#" class="sim-btn btn-hover-new" data-text="My Works" style="background: #2A2977;"><span>My Works</span></a>
+                  </div><!-- end messagebox -->
                 </div><!-- end col -->
 
                 <div class="col-md-6">
