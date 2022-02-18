@@ -167,39 +167,39 @@ mysqli_close($conn);
                         <p> <?php print_r($bio) ?> </p>
 						
 						
-						<div class="skill-bar-box">
-							<h2> Photograpgy Skills </h2>
-							<div class="skillbar" data-percent="<?php print_r($wedding_skill) ?>">
-								<span class="skillbar-title" style="background: #9A1B26;">Wedding</span>
-								<p class="skillbar-bar" style="background: #9A1B26;"></p>
-								<span class="skill-bar-percent"></span>
-							</div>
-							<!-- End Skill Bar -->
-							
-							<div class="skillbar" data-percent="<?php print_r($fashion_skill) ?>">
-								<span class="skillbar-title" style="background: #9A1B26;">Fashion</span>
-								<p class="skillbar-bar" style="background: #9A1B26;"></p>
-								<span class="skill-bar-percent"></span>
-							</div>
-							<!-- End Skill Bar -->
-							
-							<div class="skillbar" data-percent="<?php print_r($model_skill) ?>">
-								<span class="skillbar-title" style="background: #9A1B26;">Models</span>
-								<p class="skillbar-bar" style="background: #9A1B26;"></p>
-								<span class="skill-bar-percent"></span>
-							</div>
-							<!-- End Skill Bar -->
-							
-							<div class="skillbar" data-percent="<?php print_r($photography_skills) ?>">
-								<span class="skillbar-title" style="background: #9A1B26;">Photograpgy</span>
-								<p class="skillbar-bar" style="background: #9A1B26;"></p>
-								<span class="skill-bar-percent"></span>
-							</div>
-						<!-- End Skill Bar -->
-						</div>
+                        <div class="skill-bar-box">
+                          <h2> Photograpgy Skills </h2>
+                          <div class="skillbar" data-percent="<?php print_r($wedding_skill) ?>">
+                            <span class="skillbar-title" >Wedding</span>
+                            <p class="skillbar-bar" ></p>
+                            <span class="skill-bar-percent"></span>
+                          </div>
+                          <!-- End Skill Bar -->
+                          
+                          <div class="skillbar" data-percent="<?php print_r($fashion_skill) ?>">
+                            <span class="skillbar-title" >Fashion</span>
+                            <p class="skillbar-bar"></p>
+                            <span class="skill-bar-percent"></span>
+                          </div>
+                          <!-- End Skill Bar -->
+                          
+                          <div class="skillbar" data-percent="<?php print_r($model_skill) ?>">
+                            <span class="skillbar-title" >Models</span>
+                            <p class="skillbar-bar" ></p>
+                            <span class="skill-bar-percent"></span>
+                          </div>
+                          <!-- End Skill Bar -->
+                          
+                          <div class="skillbar" data-percent="<?php print_r($photography_skills) ?>">
+                            <span class="skillbar-title" >Photograpgy</span>
+                            <p class="skillbar-bar" ></p>
+                            <span class="skill-bar-percent"></span>
+                          </div>
+                        <!-- End Skill Bar -->
+                        </div>
 						
                         <a href="#" class="sim-btn btn-hover-new" data-text="My Works" style="background: #2A2977;"><span>My Works</span></a>
-                    </div><!-- end messagebox -->
+                  </div><!-- end messagebox -->
                 </div><!-- end col -->
 
                 <div class="col-md-6">
@@ -439,7 +439,7 @@ mysqli_close($conn);
             </div><!-- end title -->
             <div class="col-lg-12 text-center">
                 <div id="success"></div>
-                <button id="sendMessageButton" class="sim-btn btn-hover-new" data-text="Let's Connect" type="submit" style="background: #db5c87;">Let's Connect</button>
+                <button id="sendMessageButton" class="sim-btn btn-hover-new" data-text="Let's Connect" type="submit" style="background: #0074F0; border-style: none;" >Let's Connect</button>
             </div>
 
         </div><!-- end container -->

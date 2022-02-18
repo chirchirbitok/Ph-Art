@@ -167,7 +167,7 @@
 
 /** Footer Section **/
 .info_section {
-    background-color: #121212;
+    background-color: #2A2977;
     color: #ffffff;
     padding: 75px 0;
   }
@@ -193,8 +193,8 @@
   }
   .info_section .info_logo a img {
     width: 40px;
-    -webkit-filter: invert(1);
-            filter: invert(1);
+    -webkit-filter: invert(0.1);
+    
   }
   .info_section .info_logo a span {
     font-size: 24px;
@@ -290,5 +290,3 @@
   .readMore .addText {
     display: none;
 }
-
-  

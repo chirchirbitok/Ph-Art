@@ -194,41 +194,41 @@
 						<div class="skill-bar-box">
 							<h2> Photograpgy Skills </h2>
 							<div class="skillbar" data-percent="60">
-								<span class="skillbar-title" style="background: #db5c87;">Wedding</span>
-								<p class="skillbar-bar" style="background: #e45050;"></p>
+								<span class="skillbar-title" >Wedding</span>
+								<p class="skillbar-bar" ></p>
 								<span class="skill-bar-percent"></span>
 							</div>
 							<!-- End Skill Bar -->
 							
 							<div class="skillbar" data-percent="80">
-								<span class="skillbar-title" style="background: #db5c87;">Fashion</span>
-								<p class="skillbar-bar" style="background: #e45050;"></p>
+								<span class="skillbar-title">Fashion</span>
+								<p class="skillbar-bar" ></p>
 								<span class="skill-bar-percent"></span>
 							</div>
 							<!-- End Skill Bar -->
 							
 							<div class="skillbar" data-percent="70">
-								<span class="skillbar-title" style="background: #db5c87;">Models</span>
-								<p class="skillbar-bar" style="background: #e45050;"></p>
+								<span class="skillbar-title">Models</span>
+								<p class="skillbar-bar" ></p>
 								<span class="skill-bar-percent"></span>
 							</div>
 							<!-- End Skill Bar -->
 							
 							<div class="skillbar" data-percent="90">
-								<span class="skillbar-title" style="background: #db5c87;">Photograpgy</span>
-								<p class="skillbar-bar" style="background: #e45050;"></p>
+								<span class="skillbar-title" >Photograpgy</span>
+								<p class="skillbar-bar" ></p>
 								<span class="skill-bar-percent"></span>
 							</div>
 						<!-- End Skill Bar -->
 						</div>
-						
-                        <a href="#" class="sim-btn btn-hover-new" data-text="My Works"><span>My Works</span></a>
+                
+                        <a href="#" class="sim-btn btn-hover-new" data-text="My Works" style="border: none;"><span>My Works</span></a>
                     </div><!-- end messagebox -->
                 </div><!-- end col -->
 
                 <div class="col-md-6">
                     <div class="right-box-pro wow fadeIn">
-                        <img src="uploads/about_04.jpg" alt="" class="img-fluid img-rounded">
+                        <img src="uploads/about_04.jpeg" alt="" class="img-fluid img-rounded">
                     </div><!-- end media -->
                 </div><!-- end col -->
             </div><!-- end row -->
@@ -396,7 +396,7 @@
           var subStr = str.substring(0, max);
           var hiddenStr = str.substring(max, $.trim(str).length);
           $(this).empty().html(subStr);
-          $(this).append(' <a href="javascript:void(0);" class="link">Read more…</a>');
+          $(this).append(' <a href="javascript:void(0);" class="link" style="background-color: #8299CD">Read more…</a>');
           $(this).append('<span class="addText">' + hiddenStr + '</span>');
       }
   });

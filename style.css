@@ -518,6 +518,11 @@ xclip
     margin-top: 70px;
 }
 
+.section.wb .container .row .col-md-6 .message-box .skill-bar-box .skillbar .skillbar-title,
+.section.wb .container .row .col-md-6 .message-box .skill-bar-box .skillbar .skillbar-bar{
+    background-color:  #9A1B26;
+}
+
 .section.lb {
     background-color: #f2f3f5;
 }
@@ -2340,8 +2345,8 @@ select.mobile-device {
 }
 
 .copyrights {
-    border-top: 1px dashed rgba(255, 255, 255, 0.1);
-    background-color: #1f1f1f;
+    border-top: 1px dashed rgba(rgb(169,62,71));
+    background-color: #9A1B26;
     box-sizing: border-box;
     width: 100%;
     text-align: left;
