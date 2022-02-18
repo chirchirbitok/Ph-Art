@@ -283,14 +283,14 @@ mysqli_close($conn);
 		</div>
 	</div>
 	
-    <div id="services" class="section lb">
+   <div id="services" class="section lb">
         <div class="container">
-            <div class="section-title text-center">
-                <h3>Services</h3>
-                <p> Each one of the players needs no arrows to do so. For some walkers, not some laughter.</p>
-            </div><!-- end title -->
+              <div class="section-title text-center">
+                  <h3>Services</h3>
+                  <p> Each one of the players needs no arrows to do so. For some walkers, not some laughter.</p>
+              </div><!-- end title -->
 
-            <div class="row">
+          <div class="row">
 
             <?php if ( $Serv_result && !empty($Serv_result) ) :?>
             <?php foreach ($Serv_result as $key =>$row) :{ $service_title = $row['service_title']; $services = $row['services'];}?>
@@ -302,14 +302,14 @@ mysqli_close($conn);
                         </div>
                         <h2> <?php echo $service_title ?></h2>
                         <p> <?php  echo $services ?> </p>
-                  </div>
-            </div><!-- end col -->
+            </div>
+          </div><!-- end col -->
 
         <?php endforeach ?>
         <?php endif?>
             </div><!-- end row -->
-        </div><!-- end container -->
-    </div><!-- end section -->
+      </div><!-- end container -->
+  </div><!-- end section -->
 	
 	 <div id="reviews" class="section wb parallaxie" style="background: url('uploads/reviews-bg.jpg')">
         <div class="container">
@@ -434,12 +434,12 @@ mysqli_close($conn);
     <div id="contact" class="section db" >
         <div class="container" >
             <div class="section-title text-center">
-                <h3 style="text-transform:uppercase "  >contact us to start planning</h3>
+                <h3 style="text-transform:uppercase " >contact us to start planning</h3>
                 <p>If you're ready to begin this friendship, send us a message. We will respond back with a full guide and some questions to help us get to know you!</p>
             </div><!-- end title -->
             <div class="col-lg-12 text-center">
                 <div id="success"></div>
-                <button id="sendMessageButton" class="sim-btn btn-hover-new" data-text="Let's Connect" type="submit" style="background: #0074F0; border-style: none;" >Let's Connect</button>
+                <button id="sendMessageButton" class="sim-btn btn-hover-new" data-text="Let's Connect" type="submit" style="background: #e45050; border-style: none;" >Let's Connect</button>
             </div>
 
         </div><!-- end container -->
