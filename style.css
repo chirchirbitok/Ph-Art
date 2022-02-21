@@ -430,10 +430,10 @@ a img.aligncenter {
   position: relative;
 }
 .no-js .cd-words-wrapper b {
-  opacity: 0;
+  
 }
 .no-js .cd-words-wrapper b.is-visible {
-  opacity: 1;
+  
 }
 
 /* -------------------------------- 

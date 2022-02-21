@@ -1,52 +1,4 @@
-<?php
 
-   include_once "connection.php";
-
-
-$sql = "SELECT id, title, description, services FROM home";
-$result = mysqli_query($conn, $sql);
-
-if (mysqli_num_rows($result) > 0) {
-  // output data of each row
-  while($row = mysqli_fetch_assoc($result)) {
-    //echo "id: " . $row["id"]. " - Title: " . $row["title"]. "Decription: " . $row["description"]."services: " . $row["services"].  "<br>";
-    $id = $row["id"];
-    $title = $row["title"];
-    $description = $row["description"];
-    $services = $row["services"];
-  }
-} else {
-  echo "0 results";
-}
-
-$sql1 = "SELECT profile_id, full_name, bio, profile_image, wedding_skill, fashion_skill, model_skill, photography_skills FROM profile";
-$result1 = mysqli_query($conn, $sql1);
-
-if (mysqli_num_rows($result1) > 0) {
-  // output data of each row
-  while($row = mysqli_fetch_assoc($result1)) {
-    //echo "profile_id: " . $row["profile_id"]. " - full_name: " . $row["full_name"].  "<br>";
-    $profile_id = $row["profile_id"];
-    $full_name = $row["full_name"];
-    $bio = $row["bio"];
-    $profile_image = $row["profile_image"];
-    $wedding_skill = $row["wedding_skill"];
-    $fashion_skill = $row["fashion_skill"];
-    $model_skill = $row["model_skill"];
-    $photography_skills = $row["photography_skills"];
-  }
-} else {
-  echo "0 results";
-}
-$sqll = "SELECT service_id, service_title, services FROM service  ";
-$Serv_result = mysqli_query($conn, $sqll);
-
-$review_sql = "SELECT reviews_id, reviews_descr, review_title, review_comment, fullname, occupation_title FROM reviews";
-$review_result = mysqli_query($conn, $review_sql);
-
-
-mysqli_close($conn);
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -148,17 +100,12 @@ mysqli_close($conn);
 			<h3 class="cd-headline clip is-full-width">
 				<span>A lot of pain is a lot </span>
 				<span class="cd-words-wrapper">
-          <?php if($Serv_result && !empty($Serv_result)): ?>
-            <?php foreach($Serv_result as $key => $row) :{ $service_title_h .= $row['service_title'];}?> 
-            <b class="is-visible"><?php echo $service_title_h?></b>
-            
-            
-					<!-- <b class="is-visible">Fashion photography</b> -->
-					
-
-          <?php endforeach ?>
-          <?php endif ?>
-				</span> 
+					<b class="is-visible">Fashion photography</b>
+					<b>Candid photography</b>
+					<b>Landscape photography</b>
+					<b>Documentary photography</b>
+					<b>Architectural photography</b>
+				</span>
 			</h3>
 		</div>
 	</section>
@@ -168,42 +115,36 @@ mysqli_close($conn);
             <div class="row">
                 <div class="col-md-6">
                     <div class="message-box">                        
-                        <h2><?php print_r($full_name) ?></h2>
-                        <p> <?php print_r($bio) ?> </p>
+                        <form>
 						
 						
                         <div class="skill-bar-box">
                           <h2> Photograpgy Skills </h2>
-                          <div class="skillbar" data-percent="<?php print_r($wedding_skill) ?>">
-                            <span class="skillbar-title" >Wedding</span>
-                            <p class="skillbar-bar" ></p>
-                            <span class="skill-bar-percent"></span>
-                          </div>
-                          <!-- End Skill Bar -->
-                          
-                          <div class="skillbar" data-percent="<?php print_r($fashion_skill) ?>">
-                            <span class="skillbar-title" >Fashion</span>
-                            <p class="skillbar-bar"></p>
-                            <span class="skill-bar-percent"></span>
-                          </div>
-                          <!-- End Skill Bar -->
-                          
-                          <div class="skillbar" data-percent="<?php print_r($model_skill) ?>">
-                            <span class="skillbar-title" >Models</span>
-                            <p class="skillbar-bar" ></p>
-                            <span class="skill-bar-percent"></span>
-                          </div>
-                          <!-- End Skill Bar -->
-                          
-                          <div class="skillbar" data-percent="<?php print_r($photography_skills) ?>">
-                            <span class="skillbar-title" >Photograpgy</span>
-                            <p class="skillbar-bar" ></p>
-                            <span class="skill-bar-percent"></span>
-                          </div>
-                        <!-- End Skill Bar -->
+                          <label for="bi">Percentage:</label><br>
+                            <input type="text" id="percentage" name="percentage"><br>
+                            <label for="name">Wedding:</label><br>
+                            <input type="text" id="wedding" name="wedding" ><br>
+                            <label for="name">Fashion:</label><br>
+                            <input type="text" id="fashion" name="fashion" ><br>
+                            <label for="name">Model:</label><br>
+                            <input type="text" id="model" name="model" ><br>
+                            <label for="name">Photography:</label><br>
+                            <input type="text" id="photography" name="photography" ><br>
+
+
                         </div>
 						
-                        <a href="#" class="sim-btn btn-hover-new" data-text="My Works" style="background: #2A2977;"><span>My Works</span></a>
+                        <a href="#" class="sim-btn btn-hover-new" data-text="My Works" style="background: #2A2977;"><span>My Works</span></a><br><br>
+
+                            <label for="name">Name:</label><br>
+                            <input type="text" id="name" name="name" value="Full name"><br>
+                            <label for="bi">Bio:</label><br>
+                            <input type="text" id="bio" name="bio" value="Bio"><br><br>
+
+                            <input type="submit" value="Update">
+                            <input type="submit" value="Delete">
+
+                            </form>
                   </div><!-- end messagebox -->
                 </div><!-- end col -->
 
@@ -292,26 +233,33 @@ mysqli_close($conn);
         <div class="container">
               <div class="section-title text-center">
                   <h3>Services</h3>
-                  <p> Each one of the players needs no arrows to do so. For some walkers, not some laughter.</p>
+                  <form>
+                    <label for="lname">Service description:</label><br>
+                    <input type="text" id="descr" name="description">
+                    <input type="submit" value="Update">
+                    <input type="submit" value="Delete">
+                  </form>
               </div><!-- end title -->
 
           <div class="row">
-
-            <?php if ( $Serv_result && !empty($Serv_result) ) :?>
-            <?php foreach ($Serv_result as $key =>$row) :{ $service_title = $row['service_title']; $services = $row['services'];}?>
 
             <div class="col-md-4">
                   <div class="services-inner-box">
                       <div class="ser-icon" style="background: #9A1B26;">
                         <i class="flaticon-wedding-photo"></i>
                         </div>
-                        <h2> <?php echo $service_title ?></h2>
-                        <p> <?php  echo $services ?> </p>
+                        <form>
+                            <label for="fname">Service Title:</label><br>
+                            <input type="text" id="title" name="title" value="Title"><br>
+                            <label for="lname">Service description:</label><br>
+                            <input type="text" id="lname" name="lname" value="description"><br><br>
+                            <input type="submit" value="Update">
+                            <input type="submit" value="Delete">
+                          </form>
             </div>
           </div><!-- end col -->
 
-        <?php endforeach ?>
-        <?php endif?>
+        
             </div><!-- end row -->
       </div><!-- end container -->
   </div><!-- end section -->
@@ -327,26 +275,23 @@ mysqli_close($conn);
                 <div class="col-md-12 col-sm-12">
                     <div class="testi-carousel owl-carousel owl-theme" >
 
-                    <?php if ( $review_result && !empty($review_result) ) :?>
-                    <?php foreach ($review_result as $key =>$row) :{$review_title = $row["review_title"]; $review_comment = $row["review_comment"]; $fullname = $row["fullname"]; $occupation_title = $row["occupation_title"];}?>
-
+                    
                     <div class="testimonial clearfix" > 
                                   <figure class="testimonial_img" >
                                       <img src="uploads/testi_01.jpg" alt="" class="img-fluid">
                                   </figure>
                                   <div class="desc">
-                                      <h3><i class="fa fa-quote-left"></i> <?php print_r($review_title) ?> </h3>
-                                      <p> <?php print_r($review_comment) ?> </p>
+                                      <h3><i class="fa fa-quote-left"></i> adaf dfsa </h3>
+                                      <p> adsf</p>
                                   </div>
                                   <div class="testi-meta">
-                                        <h4> <?php print_r($fullname) ?> <small> - <?php print_r($occupation_title) ?></small></h4>
+                                        <h4> asdf <small> - asdf</small></h4>
                                   </div>
                                     <!-- end testi-meta -->
                                 </div>
                                 <!-- end testimonial -->
 
-                <?php endforeach ?>
-                <?php endif?>
+               
                     
   
 
