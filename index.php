@@ -147,17 +147,14 @@ mysqli_close($conn);
 			<p> <?php print_r($description) ?> </p>
 			<h3 class="cd-headline clip is-full-width">
 				<span>A lot of pain is a lot </span>
-				<span class="cd-words-wrapper">
-          <?php if($Serv_result && !empty($Serv_result)): ?>
-            <?php foreach($Serv_result as $key => $row) :{ $service_title_h .= $row['service_title'];}?> 
-            <b class="is-visible"><?php echo $service_title_h?></b>
-            
-            
-					<!-- <b class="is-visible">Fashion photography</b> -->
-					
 
-          <?php endforeach ?>
-          <?php endif ?>
+        <span class="cd-words-wrapper">
+					<b class="is-visible">Fashion photography</b>
+					<b>Candid photography</b>
+					<b>Landscape photography</b>
+					<b>Documentary photography</b>
+					<b>Architectural photography</b>
+				
 				</span> 
 			</h3>
 		</div>

@@ -141,6 +141,7 @@
                             <label for="bi">Bio:</label><br>
                             <input type="text" id="bio" name="bio" value="Bio"><br><br>
 
+                            <input type="submit" value="Create">
                             <input type="submit" value="Update">
                             <input type="submit" value="Delete">
 
@@ -157,6 +158,37 @@
         </div><!-- end container -->
     </div><!-- end section -->
 	
+
+    <section class="about_section layout_padding-bottom layout_padding2-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="img-box">
+              <img src="images/about-img.jpg" alt="" />
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <form>
+              <div class="detail-box">
+                <div class="heading_container">
+                  <h2>
+                  About Us
+                    <hr>
+                  </h2>
+                </div>
+                <p class="readMore">
+                  <label for="desc"> About Us description </label><br>
+                  <input type="text" name="about" value="about">
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
     <div id="gallery" class="section lb" >
 
 		<div class="container">
@@ -236,6 +268,7 @@
                   <form>
                     <label for="lname">Service description:</label><br>
                     <input type="text" id="descr" name="description">
+                    <input type="submit" value="Create">
                     <input type="submit" value="Update">
                     <input type="submit" value="Delete">
                   </form>
@@ -253,6 +286,7 @@
                             <input type="text" id="title" name="title" value="Title"><br>
                             <label for="lname">Service description:</label><br>
                             <input type="text" id="lname" name="lname" value="description"><br><br>
+                            <input type="submit" value="Create">
                             <input type="submit" value="Update">
                             <input type="submit" value="Delete">
                           </form>
@@ -276,19 +310,24 @@
                     <div class="testi-carousel owl-carousel owl-theme" >
 
                     
-                    <div class="testimonial clearfix" > 
+                        <div class="testimonial clearfix" > 
+                                <form>  
                                   <figure class="testimonial_img" >
                                       <img src="uploads/testi_01.jpg" alt="" class="img-fluid">
                                   </figure>
                                   <div class="desc">
-                                      <h3><i class="fa fa-quote-left"></i> adaf dfsa </h3>
-                                      <p> adsf</p>
+                                      <h3><i class="fa fa-quote-left"></i><label for="lname">Service description:</label><br><input type="text" id="title" name="title" value="Title"><br> <br> </h3>
+                                      <p> <label for="lname">Service Explanation:</label><br><input type="text" id="lname" name="lname" value="description"><br><br></p>
                                   </div>
                                   <div class="testi-meta">
-                                        <h4> asdf <small> - asdf</small></h4>
+                                        <h4>   <label for="lname">Author</label><br><input type="text" id="Auther" name="auther" value="Auther"><br></label><br> <small> <input type="text" id="title" name="title" value="Title"><br></small></h4>
                                   </div>
                                     <!-- end testi-meta -->
-                                </div>
+                                      <input type="submit" value="Create">
+                                      <input type="submit" value="Update">
+                                      <input type="submit" value="Delete">
+                                    </form>
+                        </div>
                                 <!-- end testimonial -->
 
                
