@@ -1,3 +1,8 @@
+<?php
+  include_once "connection.php";
+  require_once ("./php/operation.php");
+  require_once ("./php/component.php");
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,6 +32,8 @@
     <link rel="stylesheet" href="css/responsive.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
+    <!-- Awesome Fonts -->
+    <script src="https://kit.fontawesome.com/203da5c59d.js" crossorigin="anonymous"></script>
 	<script src="js/modernizr.js"></script> <!-- Modernizr -->
 
     <!--[if lt IE 9]>
@@ -88,15 +95,12 @@
       </div>
     </nav>
 	
-    <?php
-    
-    
-    ?>
+ 
 
 	<section id="home" class="main-banner parallaxie" style="background: url('uploads/banner-01.jpg')">
 		<div class="heading">
-			<h1><?php print_r($title) ?></h1>
-			<p> <?php print_r($description) ?> </p>
+			<h1>Welcome to Clean Photography</h1>
+			<p> The pain itself is love, the main customer</p>
 			<h3 class="cd-headline clip is-full-width">
 				<span>A lot of pain is a lot </span>
 				<span class="cd-words-wrapper">
@@ -119,7 +123,7 @@
 						
 						
                         <div class="skill-bar-box">
-                          <h2> Photograpgy Skills </h2>
+                          <h2> Photography Skills </h2>
                           <label for="bi">Percentage:</label><br>
                             <input type="text" id="percentage" name="percentage"><br>
                             <label for="name">Wedding:</label><br>
@@ -265,31 +269,52 @@
         <div class="container">
               <div class="section-title text-center">
                   <h3>Services</h3>
-                  <form>
-                    <label for="lname">Service description:</label><br>
-                    <input type="text" id="descr" name="description">
-                    <input type="submit" value="Create">
-                    <input type="submit" value="Update">
-                    <input type="submit" value="Delete">
-                  </form>
+                  
               </div><!-- end title -->
 
           <div class="row">
-
+ 
             <div class="col-md-4">
                   <div class="services-inner-box">
                       <div class="ser-icon" style="background: #9A1B26;">
                         <i class="flaticon-wedding-photo"></i>
                         </div>
                         <form>
+                            <label for="fname">ID</label><br>
+                            <input type="text" autocomplete="off" id="" name="title" placeholder="ID"><br>
                             <label for="fname">Service Title:</label><br>
-                            <input type="text" id="title" name="title" value="Title"><br>
+                            <input type="text" id="title" name="title" placeholder="Title"><br>
                             <label for="lname">Service description:</label><br>
-                            <input type="text" id="lname" name="lname" value="description"><br><br>
-                            <input type="submit" value="Create">
-                            <input type="submit" value="Update">
-                            <input type="submit" value="Delete">
+                            <input type="text" id="lname" name="lname" placeholder="description"><br><br>
+                            <?php buttonI("btn btn-success", "submit" ,"Create" ,"create"); ?>
+                            <?php buttonI("btn btn-primary", "submit" ,"Read" ,"read"); ?>
+                            <?php buttonI("btn btn-info", "submit" ,"Update" ,"update"); ?>
+                            <?php buttonI("btn btn-danger", "submit" ,"Delete" ,"delete"); ?>
                           </form>
+            </div>
+          </div><!-- end col -->
+
+          <div class="col-md-8">
+            <div class="d-flex table-data">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Service Title</th>
+                    <th scope="col">Service Descriptioin</th>
+                    <th scope="col" id="co2">Edit</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td><i class="fas fa-edit btnedit"></i></td>
+                  </tr>
+   
+                 </tbody>
+              </table>
             </div>
           </div><!-- end col -->
 

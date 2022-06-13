@@ -2713,3 +2713,9 @@ select.mobile-device {
 .modal-body{
     display: none;
 }
+
+.section.lb .row .col-md-8 .fas{
+    cursor: pointer;
+    color: lightsalmon;
+}
+
