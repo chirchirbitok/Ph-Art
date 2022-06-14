@@ -1,4 +1,5 @@
 <?php
+
 include "constant.php";
 
 //creating connenction 
@@ -22,7 +23,7 @@ if(mysqli_query($conn, $sql)){
     )";
 
     if(mysqli_query($conn, $sql)){
-        echo "Table created";
+        //echo "Table created";
     }else{
         echo "Cannot create table...!";
     }

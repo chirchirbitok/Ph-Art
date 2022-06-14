@@ -1,7 +1,7 @@
 <?php
   include_once "connection.php";
-  require_once ("./php/operation.php");
-  require_once ("./php/component.php");
+  require_once "./php/component.php";
+  require_once "./php/operation.php";
 ?>
 
 <!DOCTYPE html>
@@ -279,17 +279,17 @@
                       <div class="ser-icon" style="background: #9A1B26;">
                         <i class="flaticon-wedding-photo"></i>
                         </div>
-                        <form>
+                        <form method="POST" >
                             <label for="fname">ID</label><br>
                             <input type="text" autocomplete="off" id="" name="title" placeholder="ID"><br>
                             <label for="fname">Service Title:</label><br>
                             <input type="text" id="title" name="title" placeholder="Title"><br>
                             <label for="lname">Service description:</label><br>
                             <input type="text" id="lname" name="lname" placeholder="description"><br><br>
-                            <?php buttonI("btn btn-success", "submit" ,"Create" ,"create"); ?>
-                            <?php buttonI("btn btn-primary", "submit" ,"Read" ,"read"); ?>
-                            <?php buttonI("btn btn-info", "submit" ,"Update" ,"update"); ?>
-                            <?php buttonI("btn btn-danger", "submit" ,"Delete" ,"delete"); ?>
+                            <?php buttonI("btn btn-success","Create" ,"create"); ?>
+                            <?php buttonI("btn btn-primary","Read" ,"read"); ?>
+                            <?php buttonI("btn btn-info","Update" ,"update"); ?>
+                            <?php buttonI("btn btn-danger","Delete" ,"delete"); ?>
                           </form>
             </div>
           </div><!-- end col -->

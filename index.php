@@ -1,6 +1,7 @@
 <?php
 
    include_once "connection.php";
+   
 
 
 $sql = "SELECT id, title, description, services FROM home";
