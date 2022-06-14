@@ -285,7 +285,7 @@
                             <label for="fname">Service Title:</label><br>
                             <input type="text" id="title" name="title" placeholder="Title"><br>
                             <label for="lname">Service description:</label><br>
-                            <input type="text" id="lname" name="lname" placeholder="description"><br><br>
+                            <input type="text" id="lname" name="serviceDesc" placeholder="description"><br><br>
                             <?php buttonI("btn btn-success","Create" ,"create"); ?>
                             <?php buttonI("btn btn-primary","Read" ,"read"); ?>
                             <?php buttonI("btn btn-info","Update" ,"update"); ?>
@@ -305,13 +305,26 @@
                     <th scope="col" id="co2">Edit</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td><i class="fas fa-edit btnedit"></i></td>
-                  </tr>
+                <tbody id="tbody">
+                <?php
+                        if(isset($_POST["read"])){
+                          $result = getData();
+
+                          if($result){
+                            while($row = mysqli_fetch_assoc($result)){?>
+                              <tr>
+                                <td data-id="<?php echo $row['service_id'] ?>"><?php echo $row['service_id'] ?></td>
+                                <td data-id="<?php echo $row['service_id'] ?>"><?php echo $row['service_title'] ?></td>
+                                <td data-id="<?php echo $row['service_id'] ?>"><?php echo $row['services'] ?></td>
+                                <td><i class="fas fa-edit btnedit"  data-id="<?php echo $row['service_id'] ?>" style="cursor: pointer; color: lightsalmon;" ></i></td>
+                              </tr>
+                              <?php
+                            }
+                          }
+                          //echo "ilajil cccccc";
+                      }
+                  ?>
+                  
    
                  </tbody>
               </table>
@@ -590,6 +603,7 @@
 	<script src="js/main.js"></script>
     
     <script src="js/custom.js"></script>
+  <script src="./php/main.js"> </script>
 
 </body>
 </html>

@@ -2714,8 +2714,13 @@ select.mobile-device {
     display: none;
 }
 
-.section.lb .row .col-md-8 .fas{
+.section.lb .row .col-md-8.fas{
     cursor: pointer;
     color: lightsalmon;
+}
+
+.section.lb .row .col-md-4 .success{
+    background-color: lightblue;
+    padding: 1em;
 }
 
