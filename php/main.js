@@ -3,8 +3,12 @@ $(".btnedit").click(e => {
 
     //console.log(textvalues);
     let id = $("input[name*='service_id'");
+    let service_title = $("input[name*='title']");
+    let service_desc = $("input[name*='serviceDesc']");
 
     id.val(textvalues[0]);
+    service_title.val(textvalues[1]);
+    service_desc.val(textvalues[2]);
 })
 
 function displayData(e){

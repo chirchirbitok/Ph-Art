@@ -281,7 +281,7 @@
                         </div>
                         <form method="POST" >
                             <label for="fname">ID</label><br>
-                            <input type="text" autocomplete="off" id="" name="title" placeholder="ID"><br>
+                            <input type="text" autocomplete="off" id="" name="service_id" placeholder="ID"><br>
                             <label for="fname">Service Title:</label><br>
                             <input type="text" id="title" name="title" placeholder="Title"><br>
                             <label for="lname">Service description:</label><br>

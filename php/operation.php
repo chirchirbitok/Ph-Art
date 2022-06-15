@@ -19,6 +19,16 @@
         //echo "ilajil cccccc";
     }
 
+    if(isset($_POST["update"])){
+        UpdateData();
+        //echo "ilajil cccccc";
+    }
+
+    if(isset($_POST["delete"])){
+        deleteRecord();
+        //echo "ilajil cccccc";
+    }
+
     function createData(){
         $serviceTitle = textboxValue("title");
         $serviceText = textboxValue("serviceDesc");
@@ -64,6 +74,37 @@
         if(mysqli_num_rows($result)>0){
             return $result;
         }
+    }
+
+    function UpdateData(){
+        $service_id = textboxValue("service_id");
+        $service_title = textboxValue("title");
+        $service_desc = textboxValue("serviceDesc");
+
+        if($service_id && $service_title && $service_desc){
+            $sql = "UPDATE services SET service_id='$service_id', service_title='$service_title', services='$service_desc' WHERE service_id='$service_id'";
+
+            if(mysqli_query($GLOBALS['conn'], $sql)){
+                TextNode("success", "Record inserted successfuly");
+            }else{
+                TextNode("Error", "unable to update data");
+            }
+        }else{
+            TextNode("error" , "Select service using edit icon");
+        }
+    }
+
+    function deleteRecord(){
+        $id = (int)textboxValue('service_id');
+
+        $sql = "DELETE FROM services WHERE service_id=$id";
+
+        if(mysqli_query($GLOBALS['conn'], $sql)){
+            TextNode("Warning", "Record successfuly deleted");
+        }else{
+            TextNode("error", "Record not deleted");
+        }
+
     }
 
 
