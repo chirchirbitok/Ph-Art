@@ -2724,3 +2724,7 @@ select.mobile-device {
     padding: 1em;
 }
 
+.main-banner .heading .call .form-group .form-control{
+    margin-bottom: 10;
+    color: #000;
+}

@@ -99,8 +99,58 @@
 
 	<section id="home" class="main-banner parallaxie" style="background: url('uploads/banner-01.jpg')">
 		<div class="heading">
-			<h1>Welcome to Clean Photography</h1>
-			<p> The pain itself is love, the main customer</p>
+      
+        <h1>Welcome to Clean Photography</h1>
+        <p> The pain itself is love, the main customer</p>
+      <div class="row">  
+        <div class="col-md-4 " style="margin-left: 5;">
+          <form class="call" method="POST">
+          <div class="form-group ">
+              <input type="" class="form-control" id="home_id" placeholder="ID" name="home_id">
+            </div>
+            <div class="form-group ">
+              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Web Title" name="home_title">
+            </div>
+            <div class="form-group " >
+              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Web Description" name="home_desc">
+            </div>
+            <div class="form-group ">
+              <button type="button" class="btn btn-success" name="create_Home" >Create</button>
+              <button type="button" class="btn btn-primary" name="edit_Home">Edit</button>
+              <button type="button" class="btn btn-secondary" name="update_Home">Update</button>
+              <button type="button" class="btn btn-danger" name="delete_Home">Delete</button>
+            </div>
+          </form>
+      </div>
+
+      <div class="col-md-7">
+          <table class="table table-striped table-dark">
+            <thead>
+              <tr>
+                <th scope="col">Service ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th>Edit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td><i class="fas fa-edit btnedit" style="color: #A865C9; cursor: pointer;" ></td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+      </div>
+        
 			<h3 class="cd-headline clip is-full-width">
 				<span>A lot of pain is a lot </span>
 				<span class="cd-words-wrapper">

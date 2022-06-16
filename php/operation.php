@@ -13,6 +13,10 @@
         createData();
         //echo "ilajil cccccc";
     }
+    if(isset($_POST["create_Home"])){
+        createData();
+        echo "ilajil cccccc";
+    }
 
     if(isset($_POST["read"])){
         getData();
@@ -32,10 +36,28 @@
     function createData(){
         $serviceTitle = textboxValue("title");
         $serviceText = textboxValue("serviceDesc");
+
+        $home_id = textboxValue("home_id");
+        $home_title = textboxValue("home_title");
+        $home_desc = textboxValue("home_desc");
         
         if($serviceTitle && $serviceText){
             $sql = "INSERT INTO services (service_title, services) 
             VALUES ('$serviceTitle', '$serviceText')";
+
+            if(mysqli_query($GLOBALS['conn'], $sql)){
+                echo "Record Successfully inserted";
+            }else{
+                echo "Error";
+            }
+        }else{
+            //echo "Provide data in the Textbox";
+            TextNode("success", "Provide Message in the text box");
+        }
+
+        if($home_title && $home_desc){
+            $sql = "INSERT INTO homes (home_title, home_desc) 
+            VALUES ('$home_title', '$home_desc')";
 
             if(mysqli_query($GLOBALS['conn'], $sql)){
                 echo "Record Successfully inserted";
