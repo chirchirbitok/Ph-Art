@@ -9,7 +9,7 @@ $HOSTNAME ='localhost';
 $DBNAME = 'phos';
 $DB_CHARSET ='utf8';
 $HOSTUSER = 'root';
-$HOSTPASSWORD = '58092952';
+$HOSTPASSWORD = '';
 
 
 define('PATH_LIB', __DIR__ . DIRECTORY_SEPARATOR);

@@ -13,6 +13,8 @@
             $about_image = $row['about_image'];
 
         }
+    }else{
+      echo "Empty field";
     }
 
     $sql1 = "SELECT profile_id, full_name, bio, profile_image, wedding_skill, fashion_skill, model_skill, photography_skills FROM profile";
@@ -35,7 +37,7 @@ if (mysqli_num_rows($result1) > 0) {
   echo "0 results";
 }
 
-$sqll = "SELECT service_id, service_title, services FROM service  ";
+$sqll = "SELECT service_id, service_title, services FROM services  ";
 $Serv_result = mysqli_query($conn, $sqll);
 ?>
 <!DOCTYPE html>

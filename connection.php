@@ -40,6 +40,91 @@ if(mysqli_query($conn, $sql)){
             echo "Cannot create table...!";
         }
 
+        $sql = "CREATE TABLE IF NOT EXISTS profile(
+            profile_id int(11) AUTO_INCREMENT PRIMARY KEY,
+            full_name VARCHAR(50) NOT NULL,
+            bio VARCHAR(255) NOT NULL,
+            profile_image VARCHAR(255),
+            wedding_skill int(11) NOT NULL, 
+            fashion_skill int(11) NOT NULL,
+            model_skill int(11) NOT NULL,
+            photography_skills int(11)
+
+
+
+        )";
+    
+            if(mysqli_query($conn, $sql)){
+                //echo "Table created";
+            }else{
+                echo "Cannot create table...!";
+            }
+    
+            $sql = "CREATE TABLE IF NOT EXISTS package(
+                package_id int(11) AUTO_INCREMENT PRIMARY KEY,
+                package_name VARCHAR(50) NOT NULL,
+                package_type VARCHAR(50) NOT NULL
+            )";
+        
+                if(mysqli_query($conn, $sql)){
+                    //echo "Table created";
+                }else{
+                    echo "Cannot create table...!";
+                }
+                $sql = "CREATE TABLE IF NOT EXISTS about(
+                    about_id int(11) AUTO_INCREMENT PRIMARY KEY,
+                    about_title VARCHAR(50) NOT NULL,
+                    about_text VARCHAR(255) NOT NULL,
+                    about_image VARCHAR(255)
+                )";
+            
+                    if(mysqli_query($conn, $sql)){
+                        //echo "Table created";
+                    }else{
+                        echo "Cannot create table...!";
+                    }
+
+                    $sql = "CREATE TABLE IF NOT EXISTS package(
+                package_id int(11) AUTO_INCREMENT PRIMARY KEY,
+                package_name VARCHAR(50) NOT NULL,
+                package_type VARCHAR(50) NOT NULL
+            )";
+        
+                if(mysqli_query($conn, $sql)){
+                    //echo "Table created";
+                }else{
+                    echo "Cannot create table...!";
+                }
+
+                $sql = "CREATE TABLE IF NOT EXISTS about(
+                    about_id int(11) AUTO_INCREMENT PRIMARY KEY,
+                    about_title VARCHAR(50) NOT NULL,
+                    about_text VARCHAR(255) NOT NULL,
+                    about_image VARCHAR(255)
+                )";
+            
+                    if(mysqli_query($conn, $sql)){
+                        //echo "Table created";
+                    }else{
+                        echo "Cannot create table...!";
+                    }
+    
+                    $sql = "CREATE TABLE IF NOT EXISTS reviews(
+                        reviews_id int(11) AUTO_INCREMENT PRIMARY KEY,
+                        review_title VARCHAR(50) NOT NULL,
+                        reviews_descr VARCHAR(255) NOT NULL,
+                        review_comment VARCHAR(255) NOT NULL,
+                        fullname VARCHAR(50) NOT NULL,
+                        occupation_title VARCHAR(50) NOT NULL
+
+                    )";
+                
+                        if(mysqli_query($conn, $sql)){
+                            //echo "Table created";
+                        }else{
+                            echo "Cannot create table...!";
+                        }
+
 }else{
     echo "Error while creating database". mysqli_error($conn);
 } 

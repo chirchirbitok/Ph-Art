@@ -4,7 +4,7 @@
    
 
 
-$sql = "SELECT id, title, description, services FROM home";
+$sql = "SELECT id, title, description FROM homes";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
@@ -14,7 +14,6 @@ if (mysqli_num_rows($result) > 0) {
     $id = $row["id"]; 
     $title = $row["title"];
     $description = $row["description"];
-    $services = $row["services"];
   }
 } else {
   echo "0 results";
@@ -39,7 +38,7 @@ if (mysqli_num_rows($result1) > 0) {
 } else {
   echo "0 results";
 }
-$sqll = "SELECT service_id, service_title, services FROM service  ";
+$sqll = "SELECT service_id, service_title, services FROM services  ";
 $Serv_result = mysqli_query($conn, $sqll);
 
 $review_sql = "SELECT reviews_id, reviews_descr, review_title, review_comment, fullname, occupation_title FROM reviews";
