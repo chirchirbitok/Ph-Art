@@ -14,7 +14,7 @@
         //echo "ilajil cccccc";
     }
     if(isset($_POST["create_Home"])){
-        createData();
+        createHomeData();
         echo "ilajil cccccc";
     }
 
@@ -22,9 +22,18 @@
         getData();
         //echo "ilajil cccccc";
     }
+    if(isset($_POST["readHome"])){
+        getHomeData();
+        //echo "ilajil cccccc";
+    }
 
     if(isset($_POST["update"])){
         UpdateData();
+        //echo "ilajil cccccc";
+    }
+
+    if(isset($_POST["updateHome"])){
+        UpdateHomeData();
         //echo "ilajil cccccc";
     }
 
@@ -37,9 +46,7 @@
         $serviceTitle = textboxValue("title");
         $serviceText = textboxValue("serviceDesc");
 
-        $home_id = textboxValue("home_id");
-        $home_title = textboxValue("home_title");
-        $home_desc = textboxValue("home_desc");
+        
         
         if($serviceTitle && $serviceText){
             $sql = "INSERT INTO services (service_title, services) 
@@ -55,12 +62,24 @@
             TextNode("success", "Provide Message in the text box");
         }
 
+        
+        
+    }
+
+    function createHomeData(){
+
+        $home_id = textboxValue("home_id");
+        $home_title = textboxValue("home_title");
+        $home_desc = textboxValue("home_desc");
+
+
+
         if($home_title && $home_desc){
-            $sql = "INSERT INTO homes (home_title, home_desc) 
+            $sql = "INSERT INTO homes (title, description) 
             VALUES ('$home_title', '$home_desc')";
 
             if(mysqli_query($GLOBALS['conn'], $sql)){
-                echo "Record Successfully inserted";
+                //echo "Record Successfully inserted";
             }else{
                 echo "Error";
             }
@@ -68,7 +87,6 @@
             //echo "Provide data in the Textbox";
             TextNode("success", "Provide Message in the text box");
         }
-        
     }
 
     function textboxValue($value){
@@ -97,6 +115,15 @@
             return $result;
         }
     }
+    function getHomeData(){
+        $sql = "SELECT * FROM homes";
+
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+
+        if(mysqli_num_rows($result)>0){
+            return $result;
+        }
+    }
 
     function UpdateData(){
         $service_id = textboxValue("service_id");
@@ -115,6 +142,7 @@
             TextNode("error" , "Select service using edit icon");
         }
     }
+    
 
     function deleteRecord(){
         $id = (int)textboxValue('service_id');

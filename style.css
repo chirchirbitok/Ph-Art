@@ -2728,3 +2728,7 @@ select.mobile-device {
     margin-bottom: 10;
     color: #000;
 }
+
+.main-banner .heading .call .form-control{ 
+    margin: 10;
+}

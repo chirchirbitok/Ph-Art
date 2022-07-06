@@ -105,21 +105,16 @@
       <div class="row">  
         <div class="col-md-4 " style="margin-left: 5;">
           <form class="call" method="POST">
-          <div class="form-group ">
-              <input type="" class="form-control" id="home_id" placeholder="ID" name="home_id">
-            </div>
-            <div class="form-group ">
-              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Web Title" name="home_title">
-            </div>
-            <div class="form-group " >
-              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Web Description" name="home_desc">
-            </div>
-            <div class="form-group ">
-              <button type="button" class="btn btn-success" name="create_Home" >Create</button>
-              <button type="button" class="btn btn-primary" name="edit_Home">Edit</button>
-              <button type="button" class="btn btn-secondary" name="update_Home">Update</button>
-              <button type="button" class="btn btn-danger" name="delete_Home">Delete</button>
-            </div>
+                <input type="" class="form-control" id="home_id" placeholder="ID" name="home_id">
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Web Title" name="home_title">
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Web Description" name="home_desc">
+                <?php buttonI("btn btn-success","Create" ,"create_Home"); ?>
+                <?php buttonI("btn btn-primary","Read" ,"readHome"); ?>
+                <?php buttonI("btn btn-info","Update" ,"update"); ?>
+                <?php buttonI("btn btn-danger","Delete" ,"delete"); ?>
+              
+              
+                
           </form>
       </div>
 
@@ -132,20 +127,28 @@
                 <th scope="col">Description</th>
                 <th>Edit</th>
               </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td><i class="fas fa-edit btnedit" style="color: #A865C9; cursor: pointer;" ></td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
+            </thead>  
+            <tbody id="tbodyHome">
+              
+              <?php
+                if(isset($_POST["readHome"])){
+                  $result = getHomeData();
+            
+                  if($result){
+                    while($row = mysqli_fetch_assoc($result)){?>
+                      <tr>
+                        <td data-id="<?php echo $row['id'] ?>"><?php echo $row['id'] ?></td>
+                        <td data-id="<?php echo $row['id'] ?>"><?php echo $row['title'] ?></td>
+                        <td data-id="<?php echo $row['id'] ?>"><?php echo $row['description'] ?></td>
+                        <td><i class="fas fa-edit btneditHome"  data-id="<?php echo $row['id'] ?>" style="cursor: pointer; color: lightsalmon;" ></i></td>
+                      </tr>
+                      
+                      <?php
+                    }
+                  }
+                  //echo "ilajil cccccc";
+                }
+              ?>
             </tbody>
           </table>
       </div>
