@@ -177,31 +177,27 @@
 						
                         <div class="skill-bar-box">
                           <h2> Photography Skills </h2>
-                          <label for="bi">Percentage:</label><br>
-                            <input type="text" id="percentage" name="percentage"><br>
-                            <label for="name">Wedding:</label><br>
+                            <label for="name">Name:</label><br>
+                            <input type="text" id="name" name="fname" placeholder="Full name"><br>
+                            <label for="bi">Bio:</label><br>
+                            <input type="text" id="bio" name="bio" placeholder="Bio"><br>
+                            <label for="name">% Wedding Skill:</label><br>
                             <input type="text" id="wedding" name="wedding" ><br>
-                            <label for="name">Fashion:</label><br>
+                            <label for="name">% Fashion Skill:</label><br>
                             <input type="text" id="fashion" name="fashion" ><br>
-                            <label for="name">Model:</label><br>
+                            <label for="name">% Model Skill:</label><br>
                             <input type="text" id="model" name="model" ><br>
-                            <label for="name">Photography:</label><br>
-                            <input type="text" id="photography" name="photography" ><br>
+                            <label for="name">% Photography Skill:</label><br>
+                            <input type="text" id="photography" name="photography" ><br><br>
 
+
+                            <?php buttonI("btn btn-success","Create" ,"create_Home"); ?>
+                            <?php buttonI("btn btn-primary","Read" ,"readHome"); ?>
+                            <?php buttonI("btn btn-info","Update" ,"updateHome"); ?>
+                            <?php buttonI("btn btn-danger","Delete" ,"deleteRecordHome"); ?>
 
                         </div>
-						
-                        <a href="#" class="sim-btn btn-hover-new" data-text="My Works" style="background: #2A2977;"><span>My Works</span></a><br><br>
-
-                            <label for="name">Name:</label><br>
-                            <input type="text" id="name" name="name" value="Full name"><br>
-                            <label for="bi">Bio:</label><br>
-                            <input type="text" id="bio" name="bio" value="Bio"><br><br>
-
-                            <input type="submit" value="Create">
-                            <input type="submit" value="Update">
-                            <input type="submit" value="Delete">
-
+					
                             </form>
                   </div><!-- end messagebox -->
                 </div><!-- end col -->
@@ -211,6 +207,37 @@
                         <img src="uploads/about_04.jpeg" alt="" class="img-fluid img-rounded">
                     </div><!-- end media -->
                 </div><!-- end col -->
+
+                <table class="table table-dark" style="margin-top: 40 ;">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                      </tr>
+                    </tbody>
+                  </table>
             </div><!-- end row -->
         </div><!-- end container -->
     </div><!-- end section -->
