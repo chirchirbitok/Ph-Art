@@ -110,8 +110,8 @@
                 <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Web Description" name="home_desc">
                 <?php buttonI("btn btn-success","Create" ,"create_Home"); ?>
                 <?php buttonI("btn btn-primary","Read" ,"readHome"); ?>
-                <?php buttonI("btn btn-info","Update" ,"update"); ?>
-                <?php buttonI("btn btn-danger","Delete" ,"delete"); ?>
+                <?php buttonI("btn btn-info","Update" ,"updateHome"); ?>
+                <?php buttonI("btn btn-danger","Delete" ,"deleteRecordHome"); ?>
               
               
                 

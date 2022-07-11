@@ -34,12 +34,16 @@
 
     if(isset($_POST["updateHome"])){
         UpdateHomeData();
-        //echo "ilajil cccccc";
+        echo "ilajil cccccc";
     }
 
     if(isset($_POST["delete"])){
         deleteRecord();
         //echo "ilajil cccccc";
+    }
+    if(isset($_POST["deleteRecordHome"])){
+        deleteRecordHome();
+        echo "home";
     }
 
     function createData(){
@@ -143,11 +147,42 @@
         }
     }
     
+    function UpdateHomeData(){
+        //echo "update";
+        $id = textboxValue("home_id");
+        $title = textboxValue("home_title");
+        $description = textboxValue("home_desc");
+
+        if($id && $title && $description){
+            $sql = "UPDATE homes SET id = '$id', title = '$title', description = '$description' WHERE id = '$id'";
+            
+            if(mysqli_query($GLOBALS['conn'], $sql)){
+                TextNode("success", "Record inserted successfuly");
+            }else{
+                TextNode("Error", "unable to update data");
+            }
+        }else{
+            TextNode("error" , "Select service using edit icon");
+        }
+    }
 
     function deleteRecord(){
         $id = (int)textboxValue('service_id');
 
         $sql = "DELETE FROM services WHERE service_id=$id";
+
+        if(mysqli_query($GLOBALS['conn'], $sql)){
+            TextNode("Warning", "Record successfuly deleted");
+        }else{
+            TextNode("error", "Record not deleted");
+        }
+
+    }
+
+    function deleteRecordHome(){
+        $id = (int)textboxValue('home_id');
+
+        $sql = "DELETE FROM homes WHERE id=$id";
 
         if(mysqli_query($GLOBALS['conn'], $sql)){
             TextNode("Warning", "Record successfuly deleted");
