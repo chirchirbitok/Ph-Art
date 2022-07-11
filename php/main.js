@@ -29,12 +29,12 @@ function displayData(e){
 }
 
 $(".btneditHome").click(e => {
-    let textvalues = displayData(e);
+    let textvalues = displayHomeData(e);
 
     //console.log(textvalues);
-    let id = $("input[name*='id'");
-    let title = $("input[name*='title']");
-    let description = $("input[name*='description']");
+    let id = $("input[name*='home_id'");
+    let title = $("input[name*='home_title']");
+    let description = $("input[name*='home_desc']");
 
     id.val(textvalues[0]);
     title.val(textvalues[1]);
@@ -42,13 +42,13 @@ $(".btneditHome").click(e => {
 })
 
 
-function displayData(e){
+function displayHomeData(e){
     let id = 0;
     const td = $('#tbodyHome tr td');
     let textvalues = [];
 
     for(const value of td){
-        console.log(value);
+        //console.log(value);
         if(value.dataset.id == e.target.dataset.id){
             //console.log(value);
             //console.log(e.target.dataset.id);
