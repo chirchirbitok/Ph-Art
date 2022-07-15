@@ -15,8 +15,15 @@
     }
     if(isset($_POST["create_Home"])){
         createHomeData();
-        echo "ilajil cccccc";
+        //echo "ilajil cccccc";
     }
+    if(isset($_POST["create_profile"])){
+        createProfileData();
+        //echo "ilajil cccccc";
+    }
+
+
+
 
     if(isset($_POST["read"])){
         getData();
@@ -84,6 +91,31 @@
 
             if(mysqli_query($GLOBALS['conn'], $sql)){
                 //echo "Record Successfully inserted";
+            }else{
+                echo "Error";
+            }
+        }else{
+            //echo "Provide data in the Textbox";
+            TextNode("success", "Provide Message in the text box");
+        }
+    }
+    function createProfileData(){
+
+        $fname = textboxValue("fname");
+        $bio = textboxValue("bio");
+        $wedding = textboxValue("wedding");
+        $fashion = textboxValue("fashion");
+        $model = textboxValue("model");
+        $photography = textboxValue("photography");
+
+
+
+        if($fname && $bio && $wedding && $fashion && $model && $photography){
+            $sql = "INSERT INTO profile ( full_name, bio, wedding_skill, fashion_skill, model_skill, photography_skills) 
+            VALUES ( '$fname', '$bio', '$wedding', '$fashion', '$model' , '$photography')";
+
+            if(mysqli_query($GLOBALS['conn'], $sql)){
+                echo "Record Successfully inserted";
             }else{
                 echo "Error";
             }

@@ -172,11 +172,13 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="message-box">                        
-                        <form>
+                        <form method="POST">
 						
 						
                         <div class="skill-bar-box">
                           <h2> Photography Skills </h2>
+                             <label for="id">ID:</label><br>
+                            <input type="" id="id" name="profile_id" placeholder="ID"><br>
                             <label for="name">Name:</label><br>
                             <input type="text" id="name" name="fname" placeholder="Full name"><br>
                             <label for="bi">Bio:</label><br>
@@ -191,10 +193,10 @@
                             <input type="text" id="photography" name="photography" ><br><br>
 
 
-                            <?php buttonI("btn btn-success","Create" ,"create_Home"); ?>
-                            <?php buttonI("btn btn-primary","Read" ,"readHome"); ?>
-                            <?php buttonI("btn btn-info","Update" ,"updateHome"); ?>
-                            <?php buttonI("btn btn-danger","Delete" ,"deleteRecordHome"); ?>
+                            <?php buttonI("btn btn-success","Create" ,"create_profile"); ?>
+                            <?php buttonI("btn btn-primary","Read" ,""); ?>
+                            <?php buttonI("btn btn-info","Update" ,""); ?>
+                            <?php buttonI("btn btn-danger","Delete" ,""); ?>
 
                         </div>
 					
