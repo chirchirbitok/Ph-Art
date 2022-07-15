@@ -58,3 +58,35 @@ function displayHomeData(e){
     }
     return textvalues;
 }
+
+
+$(".btneditProfile").click(e => {
+    let textvalues = displayProfileData(e);
+
+    console.log(textvalues);
+    let id = $("input[name*='home_id'");
+    let title = $("input[name*='home_title']");
+    // let description = $("input[name*='home_desc']");
+
+    id.val(textvalues[0]);
+    title.val(textvalues[1]);
+    description.val(textvalues[2]);
+})
+
+
+function displayProfileData(e){
+    let id = 0;
+    const td = $('#tbodyProfile tr td');
+    let textvalues = [];
+
+    for(const value of td){
+        console.log(value);
+        // if(value.dataset.id == e.target.dataset.id){
+        //     console.log(value);
+        //     //console.log(e.target.dataset.id);
+        //     //textvalues[id++] = value.textContent;
+
+        // }
+    }
+    return textvalues;
+}

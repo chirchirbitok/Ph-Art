@@ -23,8 +23,6 @@
     }
 
 
-
-
     if(isset($_POST["read"])){
         getData();
         //echo "ilajil cccccc";
@@ -33,6 +31,7 @@
         getHomeData();
         //echo "ilajil cccccc";
     }
+    
 
     if(isset($_POST["update"])){
         UpdateData();
@@ -41,6 +40,10 @@
 
     if(isset($_POST["updateHome"])){
         UpdateHomeData();
+        //echo "ilajil cccccc";
+    }
+    if(isset($_POST["update_profile"])){
+        UpdateProfileData();
         echo "ilajil cccccc";
     }
 
@@ -160,6 +163,16 @@
             return $result;
         }
     }
+    function getProfileData(){
+       //echo "This is great";
+        $sql = "SELECT * FROM profile";
+
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+
+        if(mysqli_num_rows($result)>0){
+            return $result;
+        }
+    }
 
     function UpdateData(){
         $service_id = textboxValue("service_id");
@@ -197,6 +210,26 @@
             TextNode("error" , "Select service using edit icon");
         }
     }
+
+    function UpdateProfileData(){
+        echo "update";
+        // $id = textboxValue("home_id");
+        // $title = textboxValue("home_title");
+        // $description = textboxValue("home_desc");
+
+        // if($id && $title && $description){
+        //     $sql = "UPDATE homes SET id = '$id', title = '$title', description = '$description' WHERE id = '$id'";
+            
+        //     if(mysqli_query($GLOBALS['conn'], $sql)){
+        //         TextNode("success", "Record inserted successfuly");
+        //     }else{
+        //         TextNode("Error", "unable to update data");
+        //     }
+        // }else{
+        //     TextNode("error" , "Select service using edit icon");
+        // }
+    }
+
 
     function deleteRecord(){
         $id = (int)textboxValue('service_id');
