@@ -146,8 +146,8 @@
                       <?php
                     }
                   }
-                  //echo "ilajil cccccc";
-                }
+                  
+                } 
               ?>
             </tbody>
           </table>
@@ -177,20 +177,13 @@
 						
                         <div class="skill-bar-box">
                           <h2> Photography Skills </h2>
-                             <label for="id">ID:</label><br>
-                            <input type="" id="id" name="profile_id" placeholder="ID"><br>
-                            <label for="name">Name:</label><br>
-                            <input type="text" id="name" name="fname" placeholder="Full name"><br>
-                            <label for="bi">Bio:</label><br>
-                            <input type="text" id="bio" name="bio" placeholder="Bio"><br>
-                            <label for="name">% Wedding Skill:</label><br>
-                            <input type="text" id="wedding" name="wedding" ><br>
-                            <label for="name">% Fashion Skill:</label><br>
-                            <input type="text" id="fashion" name="fashion" ><br>
-                            <label for="name">% Model Skill:</label><br>
-                            <input type="text" id="model" name="model" ><br>
-                            <label for="name">% Photography Skill:</label><br>
-                            <input type="text" id="photography" name="photography" ><br><br>
+                            <input type="" class="form-control" id="id" name="id" placeholder="ID"><br>
+                            <input type="text" class="form-control" id="fname" name="fname" placeholder="Full name"><br>
+                            <input type="text" class="form-control" id="bio" name="profile_bio" placeholder="Bio"><br>
+                            <input type="text" class="form-control" id="wedding" name="wedding" placeholder="Wedding"><br>
+                            <input type="text" class="form-control" id="fashion" name="fashion" placeholder="Fashion"><br>
+                            <input type="text" class="form-control" id="model" name="model" placeholder="Model"><br>
+                            <input type="text" class="form-control" id="photography" name="photography" placeholder="Photography"><br><br>
 
 
                             <?php buttonI("btn btn-success","Create" ,"create_profile"); ?>
@@ -233,13 +226,13 @@
                         if($result){
                           while($row = mysqli_fetch_assoc($result)){?>
                             <tr>
-                            <th data-id="<?php echo $row['profile_id'] ?>"><?php echo $row['profile_id']?></th>
-                            <td data-id="<?php echo $row['profile_id'] ?>"><?php echo $row['full_name']?></td>
-                            <td data-id="<?php echo $row['profile_id'] ?>"><?php echo $row['bio']?></td>
-                            <td data-id="<?php echo $row['profile_id'] ?>"><?php echo $row['wedding_skill']?></td>
-                            <td data-id="<?php echo $row['profile_id'] ?>"><?php echo $row['fashion_skill']?></td>
-                            <td data-id="<?php echo $row['profile_id'] ?>"> <?php echo $row['model_skill']?></td>
-                            <td data-id="<?php echo $row['profile_id'] ?>"><?php echo $row['photography_skills']?></td>
+                            <td data-id="<?php echo $row['profile_id'] ?>"><?php echo $row['profile_id'] ?></td>
+                            <td data-id="<?php echo $row['profile_id'] ?>"><?php echo $row['full_name'] ?></td>
+                            <td data-id="<?php echo $row['profile_id'] ?>"><?php echo $row['bio'] ?></td>
+                            <td data-id="<?php echo $row['profile_id'] ?>"><?php echo $row['wedding_skill'] ?></td>
+                            <td data-id="<?php echo $row['profile_id'] ?>"><?php echo $row['fashion_skill'] ?></td>
+                            <td data-id="<?php echo $row['profile_id'] ?>"> <?php echo $row['model_skill'] ?></td>
+                            <td data-id="<?php echo $row['profile_id'] ?>"><?php echo $row['photography_skills'] ?></td>
                             <td><i class="fas fa-edit btneditProfile"  data-id="<?php echo $row['profile_id'] ?>" style="cursor: pointer; color: lightsalmon;" ></i></td>
                           </tr><?php
                           }
