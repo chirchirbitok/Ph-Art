@@ -189,7 +189,7 @@
                             <?php buttonI("btn btn-success","Create" ,"create_profile"); ?>
                             <?php buttonI("btn btn-primary","Read" ,"read_profile"); ?>
                             <?php buttonI("btn btn-info","Update" ,"update_profile"); ?>
-                            <?php buttonI("btn btn-danger","Delete" ,""); ?>
+                            <?php buttonI("btn btn-danger","Delete" ,"deleteMyProfile"); ?>
 
                         </div>
 					

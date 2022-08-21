@@ -44,7 +44,7 @@
     }
     if(isset($_POST["update_profile"])){
         UpdateProfileData();
-        echo "ilajil cccccc";
+        //echo "ilajil cccccc";
     }
 
     if(isset($_POST["delete"])){
@@ -53,7 +53,9 @@
     }
     if(isset($_POST["deleteRecordHome"])){
         deleteRecordHome();
-        echo "home";
+    }
+    if(isset($_POST["deleteMyProfile"])){
+        deleteMyProfile();
     }
 
     function createData(){
@@ -212,22 +214,26 @@
     }
 
     function UpdateProfileData(){
-        echo "update";
-        // $id = textboxValue("home_id");
-        // $title = textboxValue("home_title");
-        // $description = textboxValue("home_desc");
+        //echo "update";
+        $id = textboxValue("id");
+        $name = textboxValue("fname");
+        $bio = textboxValue("profile_bio");
+        $wedding_skill = textboxValue("wedding");
+        $fashion_skill = textboxValue("fashion");
+        $model_skill = textboxValue("model");
+        $photography_skills = textboxValue("photography");
 
-        // if($id && $title && $description){
-        //     $sql = "UPDATE homes SET id = '$id', title = '$title', description = '$description' WHERE id = '$id'";
+        if($id && $name && $bio && $wedding_skill && $fashion_skill && $model_skill && $photography_skills){
+            $sql = "UPDATE profile SET profile_id = '$id', full_name = '$name', bio = '$bio', wedding_skill = '$wedding_skill', fashion_skill = '$fashion_skill', model_skill = '$model_skill' , photography_skills = '$photography_skills' WHERE profile_id = '$id'";
             
-        //     if(mysqli_query($GLOBALS['conn'], $sql)){
-        //         TextNode("success", "Record inserted successfuly");
-        //     }else{
-        //         TextNode("Error", "unable to update data");
-        //     }
-        // }else{
-        //     TextNode("error" , "Select service using edit icon");
-        // }
+            if(mysqli_query($GLOBALS['conn'], $sql)){
+                TextNode("success", "Record inserted successfuly");
+            }else{
+                TextNode("Error", "unable to update data");
+            }
+        }else{
+            TextNode("error" , "Select service using edit icon");
+        }
     }
 
 
@@ -257,5 +263,16 @@
 
     }
 
+    function deleteMyProfile(){
+        $id = (int)textboxValue('id');
+
+        $sql = "DELETE FROM profile WHERE profile_id=$id";
+
+        if(mysqli_query($GLOBALS['conn'], $sql)){
+            TextNode("Warning", "Record successfuly deleted");
+        }else{
+            TextNode("error", "Record not deleted");
+        }
+    }
 
 ?>

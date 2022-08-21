@@ -91,8 +91,8 @@ function displayProfileData(e){
     for(const value of td){
         //console.log(value);
         if(value.dataset.id == e.target.dataset.id){
-            console.log(value);                   //--here should return only for the id target selected --it has an issue i will redo
-            console.log(e.target.dataset.profile_id);
+            //console.log(value);                   //--here should return only for the id target selected --it has an issue i will redo
+            //console.log(e.target.dataset.profile_id);
             textvalues[id++] = value.textContent;
 
         }
