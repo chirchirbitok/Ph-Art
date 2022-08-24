@@ -67,7 +67,7 @@ $(".btneditProfile").click(e => {
 
     let profile_id = $("input[name*='id'");
     let full_name = $("input[name*='fname']");
-    let bio = $("input[name*='profile_bio']");
+    let bio = $("textarea[name*='profile_bio']");
     let wedding_skill = $("input[name*='wedding'");
     let fashion_skill = $("input[name*='fashion']");
     let model_skill = $("input[name*='model']");
@@ -86,6 +86,40 @@ $(".btneditProfile").click(e => {
 function displayProfileData(e){
     let id = 0;
     const td = $('#tbodyProfile tr td');
+    let textvalues = [];
+
+    for(const value of td){
+        //console.log(value);
+        if(value.dataset.id == e.target.dataset.id){
+            //console.log(value);                   //--here should return only for the id target selected --it has an issue i will redo
+            //console.log(e.target.dataset.profile_id);
+            textvalues[id++] = value.textContent;
+
+        }
+    }
+    return textvalues;
+}
+
+
+$(".btneditOurInfo").click(e => {
+    let textvalues = displayWebInfo(e);
+
+    //console.log(textvalues);
+
+    let aboutId = $("input[name*='aboutId'");
+    let aboutTitle = $("input[name*='aboutTitle']");
+    let about_description = $("textarea[name*='about_description']");
+
+
+    aboutId.val(textvalues[0]);
+    aboutTitle.val(textvalues[1]);
+    about_description.val(textvalues[2]);
+
+})
+
+function displayWebInfo(e){
+    let id = 0;
+    const td = $('#tbodyInfo tr td');
     let textvalues = [];
 
     for(const value of td){

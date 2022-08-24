@@ -54,6 +54,11 @@
         UpdateProfileData();
         //echo "ilajil cccccc";
     }
+    if(isset($_POST["updateWebInfo"])){
+        //UpdateProfileData();
+        echo "ilajil cccccc";
+    }
+
 
     if(isset($_POST["delete"])){
         deleteRecord();
@@ -274,6 +279,7 @@
         }
     }
 
+    function 
 
     function deleteRecord(){
         $id = (int)textboxValue('service_id');

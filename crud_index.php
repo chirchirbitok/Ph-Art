@@ -179,7 +179,8 @@
                           <h2> Photography Skills </h2>
                             <input type="" class="form-control" id="id" name="id" placeholder="ID"><br>
                             <input type="text" class="form-control" id="fname" name="fname" placeholder="Full name"><br>
-                            <input type="text" class="form-control" id="bio" name="profile_bio" placeholder="Bio"><br> 
+                            <!-- <input type="text" class="form-control" id="bio" name="profile_bio" placeholder="Bio"><br>  -->
+                            <textarea class="form-control" id="bio" name="profile_bio" placeholder="Bio" rows="3"></textarea><br>
                             <input type="text" class="form-control" id="wedding" name="wedding" placeholder="Wedding"><br>
                             <input type="text" class="form-control" id="fashion" name="fashion" placeholder="Fashion"><br>
                             <input type="text" class="form-control" id="model" name="model" placeholder="Model"><br>
@@ -273,7 +274,7 @@
                   <br>
                   <?php buttonI("btn btn-success","Create" ,"create_about"); ?>
                   <?php buttonI("btn btn-primary","Read" ,"aboutWebData"); ?>
-                  <?php buttonI("btn btn-info","Update" ,"update_about"); ?>
+                  <?php buttonI("btn btn-info","Update" ,"updateWebInfo"); ?>
                   <?php buttonI("btn btn-danger","Delete" ,"delete_about"); ?>
                 </p>
 
@@ -290,7 +291,7 @@
                     <th scope="col">Handle</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody id="tbodyInfo">
                 <?php
                        if(isset($_POST["aboutWebData"])){
                         $result = getOurInfo();
@@ -302,7 +303,7 @@
                             <td data-id="<?php echo $row['about_id'] ?>"><?php echo $row['about_id'] ?></td>
                             <td data-id="<?php echo $row['about_id'] ?>"><?php echo $row['about_title'] ?></td>
                             <td data-id="<?php echo $row['about_id'] ?>"><?php echo $row['about_text'] ?></td>
-                            <td><i class="fas fa-edit btneditProfile"  data-id="<?php echo $row['profile_id'] ?>" style="cursor: pointer; color: lightsalmon;" ></i></td>
+                            <td><i class="fas fa-edit btneditOurInfo"  data-id="<?php echo $row['about_id'] ?>" style="cursor: pointer; color: lightsalmon;" ></i></td>
                           </tr><?php
                           }
                         }else{
