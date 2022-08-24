@@ -17,7 +17,7 @@
       echo "Empty field";
     }
 
-    $sql1 = "SELECT profile_id, full_name, bio, profile_image, wedding_skill, fashion_skill, model_skill, photography_skills FROM profile";
+    $sql1 = "SELECT profile_id, full_name, bio, wedding_skill, fashion_skill, model_skill, photography_skills FROM profile";
 $result1 = mysqli_query($conn, $sql1);
 
 if (mysqli_num_rows($result1) > 0) {
@@ -27,7 +27,6 @@ if (mysqli_num_rows($result1) > 0) {
     $profile_id = $row["profile_id"];
     $full_name = $row["full_name"];
     $bio = $row["bio"];
-    $profile_image = $row["profile_image"];
     $wedding_skill = $row["wedding_skill"];
     $fashion_skill = $row["fashion_skill"];
     $model_skill = $row["model_skill"];

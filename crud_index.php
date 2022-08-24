@@ -179,7 +179,7 @@
                           <h2> Photography Skills </h2>
                             <input type="" class="form-control" id="id" name="id" placeholder="ID"><br>
                             <input type="text" class="form-control" id="fname" name="fname" placeholder="Full name"><br>
-                            <input type="text" class="form-control" id="bio" name="profile_bio" placeholder="Bio"><br>
+                            <input type="text" class="form-control" id="bio" name="profile_bio" placeholder="Bio"><br> 
                             <input type="text" class="form-control" id="wedding" name="wedding" placeholder="Wedding"><br>
                             <input type="text" class="form-control" id="fashion" name="fashion" placeholder="Fashion"><br>
                             <input type="text" class="form-control" id="model" name="model" placeholder="Model"><br>
@@ -257,7 +257,7 @@
             </div>
           </div>
           <div class="col-lg-6">
-            <form>
+            <form method="POST">
               <div class="detail-box">
                 <div class="heading_container">
                   <h2>
@@ -266,12 +266,52 @@
                   </h2>
                 </div>
                 <p class="readMore">
-                  <label for="desc"> About Us description </label><br>
-                  <input type="text" name="about" value="about">
+
+                  <input class="form-control" type="" name="aboutId" value="" placeholder="Id"><br>
+                  <input class="form-control" type="text" name="aboutTitle" value="" placeholder="Title"><br>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" name="about_description" rows="3" placeholder="About"></textarea>
+                  <br>
+                  <?php buttonI("btn btn-success","Create" ,"create_about"); ?>
+                  <?php buttonI("btn btn-primary","Read" ,"aboutWebData"); ?>
+                  <?php buttonI("btn btn-info","Update" ,"update_about"); ?>
+                  <?php buttonI("btn btn-danger","Delete" ,"delete_about"); ?>
                 </p>
+
               </div>
             </form>
+            
           </div>
+          <table class="table table-dark">
+                   <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <?php
+                       if(isset($_POST["aboutWebData"])){
+                        $result = getOurInfo();
+                        //echo "ilajil cccccc";
+
+                        if($result){
+                          while($row = mysqli_fetch_assoc($result)){?>
+                            <tr>
+                            <td data-id="<?php echo $row['about_id'] ?>"><?php echo $row['about_id'] ?></td>
+                            <td data-id="<?php echo $row['about_id'] ?>"><?php echo $row['about_title'] ?></td>
+                            <td data-id="<?php echo $row['about_id'] ?>"><?php echo $row['about_text'] ?></td>
+                            <td><i class="fas fa-edit btneditProfile"  data-id="<?php echo $row['profile_id'] ?>" style="cursor: pointer; color: lightsalmon;" ></i></td>
+                          </tr><?php
+                          }
+                        }else{
+                          echo "Table is empty";
+                        }
+                    }
+                  ?>
+                </tbody>
+              </table>
         </div>
       </div>
     </section>

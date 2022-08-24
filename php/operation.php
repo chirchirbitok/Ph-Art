@@ -21,6 +21,10 @@
         createProfileData();
         //echo "ilajil cccccc";
     }
+    if(isset($_POST["create_about"])){
+        createAboutData();
+        //echo "ilajil cccccc";
+    }
 
 
     if(isset($_POST["read"])){
@@ -29,6 +33,10 @@
     }
     if(isset($_POST["readHome"])){
         getHomeData();
+        //echo "ilajil cccccc";
+    }
+    if(isset($_POST["aboutWebData"])){
+        getOurInfo();
         //echo "ilajil cccccc";
     }
     
@@ -130,6 +138,26 @@
         }
     }
 
+    function createAboutData(){
+        $id = textboxValue("aboutId");
+        $title = textboxValue("aboutTitle");
+        $text = textboxValue("about_description");
+
+        if($id && $title && $text ){
+            $sql = "INSERT INTO about ( about_id, about_title, about_text) 
+            VALUES ( '$id', '$title', '$text')";
+
+            if(mysqli_query($GLOBALS['conn'], $sql)){
+                echo "Record Successfully inserted";
+            }else{
+                echo "Error";
+            }
+        }else{
+            //echo "Provide data in the Textbox";
+            TextNode("success", "Provide Message in the text box");
+        }
+    }
+
     function textboxValue($value){
         $textbox = mysqli_real_escape_string($GLOBALS['conn'], trim($_POST[$value]));   
             if(empty($textbox)){
@@ -164,10 +192,20 @@
         if(mysqli_num_rows($result)>0){
             return $result;
         }
-    }
+    }   
     function getProfileData(){
        //echo "This is great";
         $sql = "SELECT * FROM profile";
+
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+
+        if(mysqli_num_rows($result)>0){
+            return $result;
+        }
+    }
+    function getOurInfo(){
+        //echo "This is great";
+        $sql = "SELECT * FROM about";
 
         $result = mysqli_query($GLOBALS['conn'], $sql);
 

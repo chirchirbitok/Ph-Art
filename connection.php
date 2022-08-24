@@ -44,7 +44,6 @@ if(mysqli_query($conn, $sql)){
             profile_id int(11) AUTO_INCREMENT PRIMARY KEY,
             full_name VARCHAR(50) NOT NULL,
             bio VARCHAR(255) NOT NULL,
-            profile_image VARCHAR(255),
             wedding_skill int(11) NOT NULL, 
             fashion_skill int(11) NOT NULL,
             model_skill int(11) NOT NULL,
