@@ -55,8 +55,8 @@
         //echo "ilajil cccccc";
     }
     if(isset($_POST["updateWebInfo"])){
-        //UpdateProfileData();
-        echo "ilajil cccccc";
+        updateWebInfo();
+        //echo "ilajil cccccc";
     }
 
 
@@ -69,6 +69,9 @@
     }
     if(isset($_POST["deleteMyProfile"])){
         deleteMyProfile();
+    }
+    if(isset($_POST["deleteInfo"])){
+        deleteAboutInfo();
     }
 
     function createData(){
@@ -178,7 +181,7 @@
         $element = "<h6 class='$classname'>$msg</h6>";
         echo $element;
     }
-
+    
     //get data from mysql database
     function getData(){
         $sql = "SELECT * FROM services";
@@ -278,8 +281,25 @@
             TextNode("error" , "Select service using edit icon");
         }
     }
+    function updateWebInfo(){
+        $aboutId = textboxValue("aboutId");
+        $aboutTitle = textboxValue("aboutTitle");
+        $about_description = textboxValue("about_description");
 
-    function 
+        if($aboutId && $aboutTitle && $about_description){
+            $sql = "UPDATE about SET about_id='$aboutId', about_title='$aboutTitle', about_text='$about_description' WHERE about_id='$aboutId'";
+
+            if(mysqli_query($GLOBALS['conn'], $sql)){
+                TextNode("success", "Record inserted successfuly");
+            }else{
+                TextNode("Error", "unable to update data");
+            }
+            }else{
+                TextNode("error" , "Select service using edit icon");
+            }
+        }
+    
+
 
     function deleteRecord(){
         $id = (int)textboxValue('service_id');
@@ -311,6 +331,18 @@
         $id = (int)textboxValue('id');
 
         $sql = "DELETE FROM profile WHERE profile_id=$id";
+
+        if(mysqli_query($GLOBALS['conn'], $sql)){
+            TextNode("Warning", "Record successfuly deleted");
+        }else{
+            TextNode("error", "Record not deleted");
+        }
+    }
+
+    function deleteAboutInfo(){
+        $id = (int)textboxValue('aboutId');
+
+        $sql = "DELETE FROM about  WHERE about_id='$id'";
 
         if(mysqli_query($GLOBALS['conn'], $sql)){
             TextNode("Warning", "Record successfuly deleted");

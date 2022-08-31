@@ -316,7 +316,7 @@ mysqli_close($conn);
         <div class="container">
             <div class="section-title text-center">
                 <h3>Reviews</h3>
-                <p>We thanks for all our awesome testimonials! There are hundreds of our happy customers! </p>
+                <p>Thanks for all our awesome testimonials! There are hundreds of our happy customers! </p>
             </div><!-- end title -->
 
             <div class="row">

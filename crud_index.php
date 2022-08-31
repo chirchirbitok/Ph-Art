@@ -1,7 +1,13 @@
 <?php
   include_once "connection.php";
   require_once "./php/component.php";
-  require_once "./php/operation.php";
+  try {
+      include_once 'php/operation.php';
+      } catch (\Throwable $ex) {
+        echo $ex->getMessage();
+        echo "Code : " . $e->getCode();
+      }
+
 ?>
 
 <!DOCTYPE html>
@@ -275,7 +281,7 @@
                   <?php buttonI("btn btn-success","Create" ,"create_about"); ?>
                   <?php buttonI("btn btn-primary","Read" ,"aboutWebData"); ?>
                   <?php buttonI("btn btn-info","Update" ,"updateWebInfo"); ?>
-                  <?php buttonI("btn btn-danger","Delete" ,"delete_about"); ?>
+                  <?php buttonI("btn btn-danger","Delete" ,"deleteInfo"); ?>
                 </p>
 
               </div>
@@ -286,9 +292,9 @@
                    <thead>
                   <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">About Us</th>
+                    <th scope="col">Edit</th>
                   </tr>
                 </thead>
                 <tbody id="tbodyInfo">
