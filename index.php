@@ -40,7 +40,7 @@ if (mysqli_num_rows($result1) > 0) {
 $sqll = "SELECT service_id, service_title, services FROM services  ";
 $Serv_result = mysqli_query($conn, $sqll);
 
-$review_sql = "SELECT reviews_id, reviews_descr, review_title, review_comment, fullname, occupation_title FROM reviews";
+$review_sql = "SELECT reviews_id,  review_title, review_comment, fullname, occupation_title, image FROM reviews";
 $review_result = mysqli_query($conn, $review_sql);
 
 
@@ -324,11 +324,17 @@ mysqli_close($conn);
                     <div class="testi-carousel owl-carousel owl-theme" >
 
                     <?php if ( $review_result && !empty($review_result) ) :?>
-                    <?php foreach ($review_result as $key =>$row) :{$review_title = $row["review_title"]; $review_comment = $row["review_comment"]; $fullname = $row["fullname"]; $occupation_title = $row["occupation_title"];}?>
+                    <?php foreach ($review_result as $key =>$row) :
+                      {
+                        $reviewer_image = $row['image'];
+                        $review_title = $row["review_title"]; 
+                        $review_comment = $row["review_comment"]; 
+                        $fullname = $row["fullname"]; 
+                        $occupation_title = $row["occupation_title"];}?>
 
                     <div class="testimonial clearfix" > 
                                   <figure class="testimonial_img" >
-                                      <img src="uploads/testi_01.jpg" alt="" class="img-fluid">
+                                      <img src="<?php print_r($reviewer_image) ?>"  alt="" class="img-fluid">
                                   </figure>
                                   <div class="desc">
                                       <h3><i class="fa fa-quote-left"></i> <?php print_r($review_title) ?> </h3>

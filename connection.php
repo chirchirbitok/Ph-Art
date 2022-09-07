@@ -110,8 +110,8 @@ if(mysqli_query($conn, $sql)){
     
                     $sql = "CREATE TABLE IF NOT EXISTS reviews(
                         reviews_id int(11) AUTO_INCREMENT PRIMARY KEY,
+                        image VARCHAR(450),
                         review_title VARCHAR(50) NOT NULL,
-                        reviews_descr VARCHAR(255) NOT NULL,
                         review_comment VARCHAR(255) NOT NULL,
                         fullname VARCHAR(50) NOT NULL,
                         occupation_title VARCHAR(50) NOT NULL

@@ -25,6 +25,10 @@
         createAboutData();
         //echo "ilajil cccccc";
     }
+    if(isset($_POST["comment"])){
+        insertComment();
+        //echo "ilajil cccccc";
+    }
 
 
     if(isset($_POST["read"])){
@@ -165,6 +169,38 @@
             TextNode("success", "Provide Message in the text box");
         }
     }
+    function insertComment(){
+        $id = textboxValue("id");
+        $compliment = textboxValue("compliment");
+        $userComment = textboxValue("userComment");
+        $fname = textboxValue("fname");
+        $occupation = textboxValue("occupation");
+        $images = $_FILES['image']['name'];
+        $fileTemp = $_FILES['image']['tmp_name'];
+        $fileDestination = 'uploads/'.$images;
+        
+
+        if($id && $compliment && $userComment && $fname && $occupation && $fileDestination ){
+            $sql = "INSERT INTO reviews (reviews_id, review_title, review_comment, fullname, occupation_title , image)
+            VALUES ('$id', '$compliment', '$userComment', '$fname', '$occupation' , '$fileDestination')";
+
+            if(mysqli_query($GLOBALS['conn'], $sql)){
+                if(move_uploaded_file($fileTemp, $fileDestination)){
+                    //echo "success";
+                }else{
+                    echo "fail";} 
+                //echo "Record Successfully inserted";
+            }else{
+                echo "Error";
+            }
+        }else{
+            //echo "Provide data in the Textbox";
+            TextNode("success", "Provide Message in the text box");
+        }
+
+    }
+
+
 
     function textboxValue($value){
         $textbox = mysqli_real_escape_string($GLOBALS['conn'], trim($_POST[$value]));   

@@ -477,28 +477,67 @@
 
             <div class="row">
                 <div class="col-md-12 col-sm-12">
-                    <div class="testi-carousel owl-carousel owl-theme" >
+                    <div class="" >
 
                     
                         <div class="testimonial clearfix" > 
-                                <form>  
-                                  <figure class="testimonial_img" >
-                                      <img src="uploads/testi_01.jpg" alt="" class="img-fluid">
-                                  </figure>
+                                <form method="POST" enctype="multipart/form-data">  
+                                                                
                                   <div class="desc">
-                                      <h3><i class="fa fa-quote-left"></i><label for="lname">Service description:</label><br><input type="text" id="title" name="title" value="Title"><br> <br> </h3>
-                                      <p> <label for="lname">Service Explanation:</label><br><input type="text" id="lname" name="lname" value="description"><br><br></p>
-                                  </div>
-                                  <div class="testi-meta">
-                                        <h4>   <label for="lname">Author</label><br><input type="text" id="Auther" name="auther" value="Auther"><br></label><br> <small> <input type="text" id="title" name="title" value="Title"><br></small></h4>
+                                      <h2>ID</h2>
+                                      <input type="text" name="id" placeholder="ID">  <br><br>                                      
+                                      <h2>Service Compliment:</h2>
+                                      <input type="text" id="title" name="compliment" placeholder="Compliment"><br>
+                                      <h2>Service Comment:</h2>
+                                      <textarea class="form-control" id="" name="userComment" rows="3" placeholder="Comment"></textarea><br>
+                                      <h2>Name:</h2>
+                                      <input type="text" id="Author" name="fname" placeholder="Name"><br>
+                                      <h2>Occupation:</h2>
+                                      <input type="text" id="title" name="occupation" placeholder="Occupation"><br><br>
+                                      <h2>Profile Image</h2>
+                                      <input type="file" name="image" >  <br><br>
+                                      <?php buttonI("btn btn-success","Create" ,"comment"); ?>
+                                      <?php buttonI("btn btn-primary","Read" ,"read"); ?>
+                                      <?php buttonI("btn btn-info","Update" ,"update"); ?>
+                                      <?php buttonI("btn btn-danger","Delete" ,"delete"); ?>
                                   </div>
                                     <!-- end testi-meta -->
-                                      <input type="submit" value="Create">
-                                      <input type="submit" value="Update">
-                                      <input type="submit" value="Delete">
+                                    
                                     </form>
+
+                                    <table class="table table-striped table-dark">
+                                          <thead>
+                                            <tr>
+                                              <th scope="col">#</th>
+                                              <th scope="col">First</th>
+                                              <th scope="col">Last</th>
+                                              <th scope="col">Handle</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <th scope="row">1</th>
+                                              <td>Mark</td>
+                                              <td>Otto</td>
+                                              <td>@mdo</td>
+                                            </tr>
+                                            <tr>
+                                              <th scope="row">2</th>
+                                              <td>Jacob</td>
+                                              <td>Thornton</td>
+                                              <td>@fat</td>
+                                            </tr>
+                                            <tr>
+                                              <th scope="row">3</th>
+                                              <td>Larry</td>
+                                              <td>the Bird</td>
+                                              <td>@twitter</td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
                         </div>
                                 <!-- end testimonial -->
+                        
 
                
                     
